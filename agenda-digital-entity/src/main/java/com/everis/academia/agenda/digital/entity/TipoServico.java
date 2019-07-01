@@ -19,7 +19,6 @@ public class TipoServico {
 	}
 
 	
-	
 	public TipoServico(Short codigo, String descricao) {
 		this(codigo);
 		this.descricao = descricao;

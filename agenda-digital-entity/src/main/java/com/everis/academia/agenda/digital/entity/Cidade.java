@@ -5,7 +5,9 @@ public class Cidade {
 	private Short codigo;
 	private String nome;
 	
-	public Cidade() {
+
+	
+ 	public Cidade() {
 		super();
 	}	
 	
@@ -23,6 +25,8 @@ public class Cidade {
 		this.nome = nome;
 	}
 	
-
+	
+	
+	
 
 }
