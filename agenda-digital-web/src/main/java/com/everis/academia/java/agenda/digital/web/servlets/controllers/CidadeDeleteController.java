@@ -30,12 +30,12 @@ public class CidadeDeleteController extends HttpServlet {
 		
 		
 		
-		Short codigo = Short.valueOf(req.getParameter("codigo"));//Exige implementaçao do equals() pelo codigo
+		String nome = req.getParameter("nome");;//Exige implementaçao do equals() pelo codigo
 		
-		business.delete(new Cidade(codigo));
+		business.delete(nome);
 		
-		//???Construtor
-		CidadeDAO.cidades.remove(new Cidade(codigo));
+		
+		
 		
 		PrintWriter writer = resp.getWriter();
 		writer.write("<html>");

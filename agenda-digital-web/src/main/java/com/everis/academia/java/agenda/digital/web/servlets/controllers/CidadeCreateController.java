@@ -33,10 +33,11 @@ public class CidadeCreateController extends HttpServlet {
 				String nome = req.getParameter("nome");
 				
 				//Adiciona Cidade
-				Cidade cidade = new Cidade();
-				cidade.setNome(nome);
+				//Cidade cidade = new Cidade();
 				
-				business.create(cidade);
+				
+				
+				business.create(nome);
 		
 			
 			

@@ -36,9 +36,13 @@ public class CidadeDAO implements ICidadeDAO {
 	}
 
 	@Override
-	public Boolean delete(Cidade cidade) {
+	public void delete(String nome) {
 		
-		return null;
+		if(jaExisteCidadeComNome(nome)) {
+			
+		}
+		
+		CidadeDAO.cidades.remove(nome);
 	}
 
 	@Override
@@ -49,7 +53,7 @@ public class CidadeDAO implements ICidadeDAO {
 		
 		CidadeDAO.cidades.set(IndexOf, cidade);
 		
-		((ICidadeDAO) cidades).update(cidade);
+		((CidadeDAO) CidadeDAO.cidades).update(cidade);
 	}
 
 	@Override

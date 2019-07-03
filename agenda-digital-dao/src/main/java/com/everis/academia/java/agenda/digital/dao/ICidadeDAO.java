@@ -10,11 +10,12 @@ public interface ICidadeDAO {
 	
 	Collection<Cidade> read();
 	
-	Boolean delete(Cidade cidade);
 	
 	public void update(Cidade cidade) throws Exception;
 	
-	 Boolean jaExisteCidadeComNome(String nome);
+	Boolean jaExisteCidadeComNome(String nome);
+
+	public void delete(String nome);
 		
 	
 	

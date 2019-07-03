@@ -18,14 +18,29 @@ public class CidadeBusiness implements ICidadeBusiness {
 	
 	
 	@Override
-	public void create(Cidade cidade) throws BusinessException {
+	public void create(String nome) throws BusinessException {
 		
-		if(cidade.getNome() == null || cidade.getNome().trim().isEmpty()) {				
+		/*if(cidade.getNome() == null || cidade.getNome().trim().isEmpty()) {				
 			
 			throw new BusinessException("Nome Obrigatório");
 		}
 		
 		ICidadeDAO dao = null;
+		
+		if(dao.jaExisteCidadeComNome(cidade.getNome())) {
+		
+			
+		}
+		
+		dao.create(cidade);*/
+		ICidadeDAO dao = null;
+		
+		Cidade cidade = new Cidade();
+		
+		if(cidade.getNome() == null || cidade.getNome().trim().isEmpty()) {				
+			
+			throw new BusinessException("Nome Obrigatório");
+		}
 		
 		if(dao.jaExisteCidadeComNome(cidade.getNome())) {
 		
@@ -45,13 +60,27 @@ public class CidadeBusiness implements ICidadeBusiness {
 	}
 
 	@Override
-	public Boolean delete(Cidade cidade) {
+	public void delete(String nome) {
 		
-		return null;
+		
+		
+		
+		ICidadeDAO dao2 = null;
+		
+		if(dao2.jaExisteCidadeComNome(nome)) {
+			dao2.delete(nome);
+		}else {
+			System.out.println("Não existe");
+		}
+		
+		
+		
+		
+		
 	}
 
 	@Override
-	public void update (Cidade cidade) throws BusinessException {
+	public void update (Cidade cidade) throws Exception {
 	
 		
 		

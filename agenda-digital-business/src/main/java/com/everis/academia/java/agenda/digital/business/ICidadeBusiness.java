@@ -6,12 +6,14 @@ import com.everis.academia.agenda.digital.entity.Cidade;
 
 public interface ICidadeBusiness  {
 
-	void create(Cidade cidade) throws BusinessException;
+	void create(String nome) throws BusinessException;
 
 	Collection<Cidade> read();
 
-	Boolean delete(Cidade cidade);
+	public void delete(String nome);
 
-	public void update(Cidade cidade) throws BusinessException;
+	public void update(Cidade cidade) throws Exception;
+
+	
 
 }
