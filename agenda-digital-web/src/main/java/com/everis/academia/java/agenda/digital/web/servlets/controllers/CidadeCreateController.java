@@ -10,9 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
+import com.everis.academia.java.agenda.digital.web.servlets.ValidationException;
 
 
-@WebServlet(name = "Create", urlPatterns = "/cidade/ControladorCreate")
+	@WebServlet(name = "Create", urlPatterns = "/cidade/ControladorCreate")
 	public class CidadeCreateController extends HttpServlet {
 
 		
@@ -22,10 +23,12 @@ import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
 		private short id;
 		
 		
-
+		@Override
 		protected void service(HttpServletRequest req,
 				HttpServletResponse resp) throws ServletException,IOException {
 
+			
+			
 			
 			PrintWriter writer = resp.getWriter();
 			
@@ -34,9 +37,17 @@ import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
 			
 			if(nome == null || nome.trim().isEmpty()) {				
 				
-				writer.write("Não foi possivel fazer a introdução");
+				throw new ValidationException("Nome Obrigatório");
 			}
 			
+			for(Cidade cidade: CidadeDAO.cidades) {
+				
+				if (cidade.getNome().trim().equalsIgnoreCase(nome)) {
+					
+					throw new ValidationException(
+							"Já existe uma cidade com o mesmo nome");
+				}
+			}
 				
 				
 			//Adiciona Cidade

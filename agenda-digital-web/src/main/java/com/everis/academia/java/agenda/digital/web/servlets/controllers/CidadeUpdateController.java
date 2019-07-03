@@ -11,20 +11,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
+import com.everis.academia.java.agenda.digital.web.servlets.ValidationException;
 
-	@WebServlet(name="Update", urlPatterns = "/ControladorUpdate")
+	@WebServlet(name="Update", urlPatterns = "/cidade/ControladorUpdate")
 	public class CidadeUpdateController extends HttpServlet{
 
 		
-		/**
-		 * 
-		 */
+		
 		private static final long serialVersionUID = 1L;
 
+		@Override
 		protected void service(HttpServletRequest req,
 				HttpServletResponse resp) throws ServletException,IOException {
 			
-			
+			//Recupera Parametros
 			Short codigo = Short.valueOf(req.getParameter("codigo"));
 			String nome = req.getParameter("nome");
 			
@@ -36,13 +36,16 @@ import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
 					if(cidade.getNome().trim().equalsIgnoreCase(nome)
 						&& !cidade.getCodigo().equals(codigo)) {
 						
-						throw new ServletException("Já existe uma outra cidade com o mesmo nome");
+						throw new ValidationException("Já existe uma outra cidade com o mesmo nome");
 					}
 					
 				}
 			//Actualiza cidade	
 			Cidade cidade = new Cidade(codigo,nome);
+			
 			int IndexOf = CidadeDAO.cidades.indexOf(cidade);
+			CidadeDAO.cidades.set(IndexOf, cidade);
+			
 			
 			//Imprime Mensagem.
 			PrintWriter writer = resp.getWriter();

@@ -18,7 +18,7 @@ import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
 
 	
 		private static final long serialVersionUID = 1L;
-
+	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
 		
@@ -27,18 +27,37 @@ import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
 		
 		
 		
-			PrintWriter out = resp.getWriter();
+			PrintWriter writer = resp.getWriter();
 			
-			out.write("<html>");
-			out.write("<body>");
-			out.write("<table border=\"1\">");
-			
-			out.write("<tr><td>Codigo:</td><td>Nome:</td></tr>");
-				for (Cidade cidade : CidadeDAO.cidades) {
-					out.write("<tr><td>"+cidade.getCodigo()+"</td><td>"+cidade.getNome()+"</td></tr>");
-				}
-			out.write("</body>");
-			out.write("</html>");
+			writer.write("<html>");
+			writer.write("<body>");
+			writer.write("<a href=\"create\">Criar Nova Cidade</a>");
+			writer.write("<table width=\"100%\" border=\"1px\">");
+			writer.write("<tr>");
+			writer.write("<th width=\"70px\">Código</td>");
+			writer.write("<th>");
+			writer.write("Nome");
+			writer.write("</th>");
+			writer.write("<th colspan=\"2\">");
+			writer.write("Ações");
+			writer.write("</th>");
+			writer.write("</tr>");
+
+			for (Cidade cidade : CidadeDAO.cidades) {
+				writer.write("<tr>");
+				writer.write("<td>" + cidade.getCodigo() + "</td>");
+				writer.write("<td>" + cidade.getNome() + "</td>");
+				writer.write("<td width=\"70px\"><a href=\"cidade/ControladorUpdate?codigo="
+						+ cidade.getCodigo() + "\">Atualizar</a></td>");
+				writer.write(
+						"<td width=\"70px\"><a href=\"delete/controller?codigo="
+						+ cidade.getCodigo() + "\">Excluir</a></td>");
+				writer.write("</tr>");
+			}
+
+			writer.write("</table>");
+			writer.write("</body>");
+			writer.write("</html>");
 		
 	
 	
