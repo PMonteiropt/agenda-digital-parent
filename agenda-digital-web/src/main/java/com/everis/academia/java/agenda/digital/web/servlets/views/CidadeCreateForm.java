@@ -21,26 +21,27 @@ public class CidadeCreateForm extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
 		
-		PrintWriter output = resp.getWriter();
+		PrintWriter writer = resp.getWriter();
 		
-		output.println("<html>");
-		output.println("<body>");
-		output.println("<form action=\"ControladorCreate\">");
-		output.println("<table border=\"1\">");
-		
-		
-		
-		output.println(
-					"<tr><td>Nome:</td><td><input type=\"text\" name=\"nome\"/></td></tr>");
-		output.println("<tr><td colspan=\"2\" align=\"center\">");
-		output.println("<input type=\"submit\" value=\"Enviar\"/>");
-		output.println("</td></tr>");
-		
-		
-		output.println("</table>");
-		output.println("</form");
-		output.println("</body");
-		output.println("</html");
+		writer.write("<html>");
+		writer.write("<body>");
+		writer.write("<form action=\"ControladorCreate\">");
+		writer.write("<table>");
+		writer.write("<tr>");
+		writer.write("<td>Nome:</td>");
+		writer.write("<td><input type=\"text\" name=\"nome\"></td>");
+		writer.write("</tr>");
+		writer.write("<tr>");
+		writer.write("<td>");
+		writer.write("<input type=\"submit\" name=\"acao\" value=\"Criar\"\\>");
+		writer.write(
+				"<input type= \"reset\" name=\"acao\" value=\"Limpar\"\\>");
+		writer.write("</td>");
+		writer.write("</tr>");
+		writer.write("</table>");
+		writer.write("</form>");
+		writer.write("</body>");
+		writer.write("</html>");
 	}
 		 
 }

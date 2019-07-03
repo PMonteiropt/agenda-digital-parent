@@ -43,7 +43,7 @@ import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
 			writer.write("</th>");
 			writer.write("</tr>");
 
-			for (Cidade cidade : CidadeDAO.cidades) {
+			for (Cidade cidade:ICidadeDAO) {
 				writer.write("<tr>");
 				writer.write("<td>" + cidade.getCodigo() + "</td>");
 				writer.write("<td>" + cidade.getNome() + "</td>");

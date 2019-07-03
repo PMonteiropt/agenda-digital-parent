@@ -7,6 +7,6 @@ import com.everis.academia.agenda.digital.entity.Cidade;
 
 public class CidadeDAO {
 
-	public static List<Cidade> cidades = new ArrayList<>();
+	
 
 }

@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
+import com.everis.academia.java.agenda.digital.business.ICidadeBusiness;
+import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
 
 
@@ -18,7 +20,7 @@ import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
 @WebServlet(name="Delete", urlPatterns = "/delete/controller")
 public class CidadeDeleteController extends HttpServlet {
 
-
+	private ICidadeBusiness business = new CidadeBusiness();
 	
 	private static final long serialVersionUID = 1L;
 
@@ -29,6 +31,8 @@ public class CidadeDeleteController extends HttpServlet {
 		
 		
 		Short codigo = Short.valueOf(req.getParameter("codigo"));//Exige implementaçao do equals() pelo codigo
+		
+		business.delete(new Cidade(codigo));
 		
 		//???Construtor
 		CidadeDAO.cidades.remove(new Cidade(codigo));

@@ -10,13 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
-import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
-import com.everis.academia.java.agenda.digital.web.servlets.ValidationException;
+import com.everis.academia.java.agenda.digital.business.ICidadeBusiness;
+import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
+
+	
 
 	@WebServlet(name="Update", urlPatterns = "/cidade/ControladorUpdate")
 	public class CidadeUpdateController extends HttpServlet{
 
-		
+		private ICidadeBusiness business = new CidadeBusiness();
 		
 		private static final long serialVersionUID = 1L;
 
@@ -24,28 +26,16 @@ import com.everis.academia.java.agenda.digital.web.servlets.ValidationException;
 		protected void service(HttpServletRequest req,
 				HttpServletResponse resp) throws ServletException,IOException {
 			
+			
+			try {
 			//Recupera Parametros
-			Short codigo = Short.valueOf(req.getParameter("codigo"));
+			
 			String nome = req.getParameter("nome");
 			
-			if(nome==null || nome.trim().isEmpty()) {
-				
-				throw new ServletException("Nome Obrigatório");
-			}		
-				for(Cidade cidade : CidadeDAO.cidades) {
-					if(cidade.getNome().trim().equalsIgnoreCase(nome)
-						&& !cidade.getCodigo().equals(codigo)) {
-						
-						throw new ValidationException("Já existe uma outra cidade com o mesmo nome");
-					}
-					
-				}
-			//Actualiza cidade	
-			Cidade cidade = new Cidade(codigo,nome);
+			Cidade cidade = new Cidade();
+			cidade.setNome(nome);
 			
-			int IndexOf = CidadeDAO.cidades.indexOf(cidade);
-			CidadeDAO.cidades.set(IndexOf, cidade);
-			
+			business.update(cidade);
 			
 			//Imprime Mensagem.
 			PrintWriter writer = resp.getWriter();
@@ -55,10 +45,10 @@ import com.everis.academia.java.agenda.digital.web.servlets.ValidationException;
 			writer.write("</body>");
 			writer.write("</body>");
 			
-			}
-			
-			
+			}catch(Exception e) {
 			
 		}
-
+			
+		}
+	}
 
