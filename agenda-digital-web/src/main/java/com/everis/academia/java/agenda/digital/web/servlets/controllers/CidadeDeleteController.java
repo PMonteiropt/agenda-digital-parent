@@ -23,22 +23,27 @@ public class CidadeDeleteController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		Short codigo = Short.valueOf(req.getParameter("codigo"));// Exige implementaçao do equals() pelo codigo
+		try {
+			Short codigo = Short.valueOf(req.getParameter("codigo"));// Exige implementaçao do equals() pelo codigo
 
-		Cidade cidade = new Cidade();
-		
-		cidade.setCodigo(codigo);
-		
-		
-		
-		business.delete(cidade);
+			Cidade cidade = new Cidade();
+			
+			cidade.setCodigo(codigo);
+			
+			
+			
+			business.delete(cidade);
 
-		PrintWriter writer = resp.getWriter();
-		writer.write("<html>");
-		writer.write("<body>");
-		writer.write("Registo Excluido com sucesso");
-		writer.write("<body>");
-		writer.write("</body>");
+			PrintWriter writer = resp.getWriter();
+			writer.write("<html>");
+			writer.write("<body>");
+			writer.write("Registo Excluido com sucesso");
+			writer.write("<body>");
+			writer.write("</body>");
+		} catch (Exception e) {
+			
+		
+		}
 
 	}
 
