@@ -12,7 +12,7 @@ import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.business.ICidadeBusiness;
 import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 
-@WebServlet(name = "Create", urlPatterns = "/ControladorCreate")
+@WebServlet(name = "Create", urlPatterns = "/cidade/ControladorCreate")
 public class CidadeCreateController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -20,37 +20,34 @@ public class CidadeCreateController extends HttpServlet {
 	private ICidadeBusiness business = new CidadeBusiness();
 
 	@Override
-		protected void service(HttpServletRequest req,
-				HttpServletResponse resp) throws ServletException,IOException {
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		PrintWriter writer = resp.getWriter();
+
+		try {
+			String nome = req.getParameter("nome");
+
+			// Adiciona Cidade
+
+			Cidade cidade = new Cidade();
 
 			
 			
+			cidade.setNome(nome);
+
+			business.create(cidade);
+
+			System.out.println("Depois");
 			
-				PrintWriter writer = resp.getWriter();
-			
-			
-				try {
-				String nome = req.getParameter("nome");
-				
-				//Adiciona Cidade
-				//Cidade cidade = new Cidade();
-				
-				
-				
-				business.create(nome);
-		
-			
-			
-			
-			
-			//Imprime Mensagem
+			// Imprime Mensagem
 			writer.println("<html>");
 			writer.println("<body>");
 			writer.println("Registo incluido com sucesso");
 			writer.println("</body>");
 			writer.println("</html>");
-			
-				}catch(Exception e) {
-			}
-		 }
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

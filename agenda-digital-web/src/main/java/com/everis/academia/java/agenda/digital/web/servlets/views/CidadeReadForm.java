@@ -10,13 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
-import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
+import com.everis.academia.java.agenda.digital.business.ICidadeBusiness;
+import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 
 
 	@WebServlet(name = "CidadeReadForm", urlPatterns = "/cidade/read")
 	public class CidadeReadForm extends HttpServlet {
 
-	
+		private ICidadeBusiness business = new CidadeBusiness();
+		
+		
 		private static final long serialVersionUID = 1L;
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) 
@@ -43,7 +46,9 @@ import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
 			writer.write("</th>");
 			writer.write("</tr>");
 
-			for (Cidade cidade:ICidadeDAO) {
+			for (Cidade cidade : business.read()) {
+				
+			
 				writer.write("<tr>");
 				writer.write("<td>" + cidade.getCodigo() + "</td>");
 				writer.write("<td>" + cidade.getNome() + "</td>");

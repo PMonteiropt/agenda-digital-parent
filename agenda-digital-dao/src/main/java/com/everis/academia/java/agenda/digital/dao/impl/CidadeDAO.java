@@ -11,6 +11,10 @@ import com.everis.academia.java.agenda.digital.dao.ICidadeDAO;
 
 public class CidadeDAO implements ICidadeDAO {
 
+	
+		
+	
+	
 	static List<Cidade> cidades = new ArrayList<>();
 	
 	private static short id=0;
@@ -32,35 +36,39 @@ public class CidadeDAO implements ICidadeDAO {
 
 	@Override
 	public Collection<Cidade> read() {
-		return null;
+		
+		return cidades;
 	}
 
 	@Override
-	public void delete(String nome) {
+	public void delete(Cidade cidade) {
 		
-		if(jaExisteCidadeComNome(nome)) {
-			
-		}
 		
-		CidadeDAO.cidades.remove(nome);
+		cidades.remove(cidade);
+		
+		
 	}
 
 	@Override
 	public void  update(Cidade cidade) throws Exception {
 		
 		
-		int IndexOf = CidadeDAO.cidades.indexOf(cidade);
-		
-		CidadeDAO.cidades.set(IndexOf, cidade);
-		
-		((CidadeDAO) CidadeDAO.cidades).update(cidade);
+		int indexOf = cidades.indexOf(cidade);
+		cidades.set(indexOf, cidade);
 	}
 
 	@Override
 	public Boolean jaExisteCidadeComNome(String nome) {
 		
-		return null;
+		for(Cidade cidade : cidades) {
+			if(cidade.getNome().equals(nome)) 
+				return true;
+		}
+		return false;
+	
 	}
+
+	
 
 	
 }

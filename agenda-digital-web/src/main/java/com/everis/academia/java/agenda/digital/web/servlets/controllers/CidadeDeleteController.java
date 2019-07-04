@@ -12,43 +12,34 @@ import javax.servlet.http.HttpServletResponse;
 import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.business.ICidadeBusiness;
 import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
-import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
 
-
-
-
-@WebServlet(name="Delete", urlPatterns = "/delete/controller")
+@WebServlet(name = "Delete", urlPatterns = "/delete/controller")
 public class CidadeDeleteController extends HttpServlet {
 
 	private ICidadeBusiness business = new CidadeBusiness();
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void service(HttpServletRequest req,
-			HttpServletResponse resp) throws ServletException,IOException{
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		Short codigo = Short.valueOf(req.getParameter("codigo"));// Exige implementaçao do equals() pelo codigo
+
+		Cidade cidade = new Cidade();
+		
+		cidade.setCodigo(codigo);
 		
 		
 		
-		String nome = req.getParameter("nome");;//Exige implementaçao do equals() pelo codigo
-		
-		business.delete(nome);
-		
-		
-		
-		
+		business.delete(cidade);
+
 		PrintWriter writer = resp.getWriter();
 		writer.write("<html>");
 		writer.write("<body>");
 		writer.write("Registo Excluido com sucesso");
 		writer.write("<body>");
 		writer.write("</body>");
-		
-		
-		
+
 	}
-	
-	
-	
 
 }

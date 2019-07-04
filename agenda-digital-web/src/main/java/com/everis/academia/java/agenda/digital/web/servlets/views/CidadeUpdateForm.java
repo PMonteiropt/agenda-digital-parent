@@ -9,22 +9,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.everis.academia.java.agenda.digital.business.ICidadeBusiness;
+import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
 import com.everis.academia.agenda.digital.entity.Cidade;
 
 @WebServlet(name = "CidadeUpdateForm", urlPatterns = "/cidade/update")
 public class CidadeUpdateForm extends HttpServlet {
 
+	private ICidadeBusiness business = new CidadeBusiness();
+	
 	private static final long serialVersionUID = 1L;
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		Short codigo = Short.valueOf(req.getParameter("codigo"));
+		String nome = req.getParameter("nome");
 
 		int indexOf = CidadeDAO.cidades.indexOf(new Cidade(codigo));
 		Cidade cidade = CidadeDAO.cidades.get(indexOf);
 
+		
+		
+		
+		
 		PrintWriter writer = resp.getWriter();
 
 		writer.write("<html>");

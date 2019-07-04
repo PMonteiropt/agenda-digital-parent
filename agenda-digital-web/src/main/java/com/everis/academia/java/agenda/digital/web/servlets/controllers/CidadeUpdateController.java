@@ -13,42 +13,37 @@ import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.business.ICidadeBusiness;
 import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 
-	
+@WebServlet(name = "Update", urlPatterns = "/cidade/ControladorUpdate")
+public class CidadeUpdateController extends HttpServlet {
 
-	@WebServlet(name="Update", urlPatterns = "/cidade/ControladorUpdate")
-	public class CidadeUpdateController extends HttpServlet{
+	private ICidadeBusiness business = new CidadeBusiness();
 
-		private ICidadeBusiness business = new CidadeBusiness();
-		
-		private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-		@Override
-		protected void service(HttpServletRequest req,
-				HttpServletResponse resp) throws ServletException,IOException {
-			
-			
-			try {
-			//Recupera Parametros
-			
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		try {
+			// Recupera Parametros
+
 			String nome = req.getParameter("nome");
-			
+
 			Cidade cidade = new Cidade();
 			cidade.setNome(nome);
-			
+
 			business.update(cidade);
-			
-			//Imprime Mensagem.
+
+			// Imprime Mensagem.
 			PrintWriter writer = resp.getWriter();
 			writer.write("<html>");
 			writer.write("<body>");
 			writer.write("Registo Actualizado com Sucesso");
 			writer.write("</body>");
 			writer.write("</body>");
-			
-			}catch(Exception e) {
-			
-		}
-			
-		}
-	}
 
+		} catch (Exception e) {
+
+		}
+
+	}
+}

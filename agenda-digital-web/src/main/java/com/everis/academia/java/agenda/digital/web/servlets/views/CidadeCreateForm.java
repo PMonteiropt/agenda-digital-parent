@@ -1,6 +1,5 @@
+
 package com.everis.academia.java.agenda.digital.web.servlets.views;
-
-
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,18 +10,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "CidadeCreatForm", urlPatterns = "/cidade/create")
+@WebServlet(name = "CidadeCreateForm", urlPatterns = "/cidade/create")
 public class CidadeCreateForm extends HttpServlet {
 
-	
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) 
-			throws ServletException, IOException {
-		
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 		PrintWriter writer = resp.getWriter();
-		
+
 		writer.write("<html>");
 		writer.write("<body>");
 		writer.write("<form action=\"ControladorCreate\">");
@@ -34,8 +31,7 @@ public class CidadeCreateForm extends HttpServlet {
 		writer.write("<tr>");
 		writer.write("<td>");
 		writer.write("<input type=\"submit\" name=\"acao\" value=\"Criar\"\\>");
-		writer.write(
-				"<input type= \"reset\" name=\"acao\" value=\"Limpar\"\\>");
+		writer.write("<input type= \"reset\" name=\"acao\" value=\"Limpar\"\\>");
 		writer.write("</td>");
 		writer.write("</tr>");
 		writer.write("</table>");
@@ -43,5 +39,5 @@ public class CidadeCreateForm extends HttpServlet {
 		writer.write("</body>");
 		writer.write("</html>");
 	}
-		 
+
 }
