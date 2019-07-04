@@ -43,7 +43,7 @@ public class CidadeDAO implements ICidadeDAO {
 	@Override
 	public void delete(Cidade cidade) {
 		
-		
+		//remove itera e verifica se existe objecto na lista
 		cidades.remove(cidade);
 		
 		

@@ -37,7 +37,7 @@ public class CidadeCreateController extends HttpServlet {
 
 			business.create(cidade);
 
-			System.out.println("Depois");
+			
 			
 			// Imprime Mensagem
 			writer.println("<html>");

@@ -52,8 +52,8 @@ import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 				writer.write("<tr>");
 				writer.write("<td>" + cidade.getCodigo() + "</td>");
 				writer.write("<td>" + cidade.getNome() + "</td>");
-				writer.write("<td width=\"70px\"><a href=\"cidade/ControladorUpdate?codigo="
-						+ cidade.getCodigo() + "\">Atualizar</a></td>");
+				writer.write("<td width=\"70px\"><a href=\"ControladorUpdate?codigo="
+						+ cidade.getNome() + "\">Atualizar</a></td>");
 				writer.write(
 						"<td width=\"70px\"><a href=\"delete/controller?codigo="
 						+ cidade.getCodigo() + "\">Excluir</a></td>");

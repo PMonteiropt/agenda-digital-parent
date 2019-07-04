@@ -56,7 +56,7 @@ public class CidadeBusiness implements ICidadeBusiness {
 		}
 
 		if (dao.jaExisteCidadeComNome(cidade.getNome())) {
-
+			throw new BusinessException("Nome já existe");
 		}
 		dao.update(cidade);
 

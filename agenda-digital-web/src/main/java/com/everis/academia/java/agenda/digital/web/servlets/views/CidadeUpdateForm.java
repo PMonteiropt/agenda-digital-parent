@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.everis.academia.java.agenda.digital.business.ICidadeBusiness;
 import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
-import com.everis.academia.java.agenda.digital.web.servlets.CidadeDAO;
 import com.everis.academia.agenda.digital.entity.Cidade;
 
 @WebServlet(name = "CidadeUpdateForm", urlPatterns = "/cidade/update")
@@ -26,11 +25,15 @@ public class CidadeUpdateForm extends HttpServlet {
 
 		String nome = req.getParameter("nome");
 
-		int indexOf = CidadeDAO.cidades.indexOf(new Cidade(codigo));
-		Cidade cidade = CidadeDAO.cidades.get(indexOf);
-
+		Cidade cidade = new Cidade();
 		
+		cidade.setNome(nome);
 		
+		try {
+			business.update(cidade);
+		} catch (Exception e) {
+		
+		}
 		
 		
 		PrintWriter writer = resp.getWriter();
