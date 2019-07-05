@@ -1,3 +1,4 @@
+<%@page import="com.everis.academia.agenda.digital.entity.Cidade"%>
 <%@page
 	import="com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness"%>
 <%@page
@@ -10,7 +11,7 @@ import="com.everis.academia.java.agenda.digital.dao.impl.CidadeDAO"%>
 import="com.everis.academia.java.agenda.digital.dao.ICidadeDAO"%>
 
 
-<%
+<%!
 	ICidadeBusiness business = new CidadeBusiness();
 %>
 
