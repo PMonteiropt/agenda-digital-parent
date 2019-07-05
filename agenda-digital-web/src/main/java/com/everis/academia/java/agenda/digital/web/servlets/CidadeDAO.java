@@ -8,5 +8,4 @@ import com.everis.academia.agenda.digital.entity.Cidade;
 public class CidadeDAO {
 
 	
-
 }

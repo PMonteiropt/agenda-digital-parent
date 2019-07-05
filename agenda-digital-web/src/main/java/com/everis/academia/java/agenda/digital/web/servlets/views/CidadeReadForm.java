@@ -48,14 +48,14 @@ import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 
 			for (Cidade cidade : business.read()) {
 				
-			
+				
 				writer.write("<tr>");
 				writer.write("<td>" + cidade.getCodigo() + "</td>");
 				writer.write("<td>" + cidade.getNome() + "</td>");
-				writer.write("<td width=\"70px\"><a href=\"cidade/update?nome="
-						+ cidade.getNome() + "\">Atualizar</a></td>");
+				writer.write("<td width=\"70px\"><a href=\""+req.getContextPath()+"/cidade/update?nome="
+						+ cidade.getNome() + "&codigo="+cidade.getCodigo()+"\">Atualizar</a></td>");
 				writer.write(
-						"<td width=\"70px\"><a href=\"delete/controller?codigo="
+						"<td width=\"70px\"><a href=\""+ req.getContextPath()+"/delete/controller?codigo="
 						+ cidade.getCodigo() + "\">Excluir</a></td>");
 				writer.write("</tr>");
 			}
@@ -63,7 +63,6 @@ import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 			writer.write("</table>");
 			writer.write("</body>");
 			writer.write("</html>");
-		
 	
 	
 	}

@@ -13,7 +13,7 @@ import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.business.ICidadeBusiness;
 import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 
-@WebServlet(name = "Update", urlPatterns = "/ControladorUpdate")
+@WebServlet(name = "Update", urlPatterns = "/cidade/ControladorUpdate")
 public class CidadeUpdateController extends HttpServlet {
 
 	private ICidadeBusiness business = new CidadeBusiness();
@@ -23,13 +23,22 @@ public class CidadeUpdateController extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		
+	
+		
+		
 		try {
 			// Recupera Parametros
 
 			String nome = req.getParameter("nome");
+			Short codigo = Short.valueOf(req.getParameter("codigo"));
+			
 
 			Cidade cidade = new Cidade();
+			
 			cidade.setNome(nome);
+			cidade.setCodigo(codigo);
+			
 
 			business.update(cidade);
 

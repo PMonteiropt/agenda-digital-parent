@@ -24,10 +24,12 @@ public class CidadeUpdateForm extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String nome = req.getParameter("nome");
+		Short codigo = Short.valueOf(req.getParameter("codigo"));
 
 		Cidade cidade = new Cidade();
 		
 		cidade.setNome(nome);
+		cidade.setCodigo(codigo);
 		
 		try {
 			business.update(cidade);

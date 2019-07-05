@@ -4,7 +4,10 @@
 	import="com.everis.academia.java.agenda.digital.business.ICidadeBusiness"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
+<%@page
+import="com.everis.academia.java.agenda.digital.dao.impl.CidadeDAO"%>
+<%@page
+import="com.everis.academia.java.agenda.digital.dao.ICidadeDAO"%>
 
 
 <%
@@ -24,12 +27,19 @@
 			<th>Nome</th>
 			<th colspan="2">Ações</th>
 		</tr>
+		
+		<%
+		for(Cidade cidade : business.read()) {
+		%>
 		<tr>
-			<td>1</td>
-			<td>lisboa</td>
-			<td width="70px"><a href="ControladorUpdate?codigo=lisboa">Atualizar</a></td>
-			<td width="70px"><a href="delete/controller?codigo=1">Excluir</a></td>
+			<td><%=cidade.getCodigo() %></td>
+			<td><%=cidade.getNome() %></td>
+			<td width="70px"><a href="update.jsp?codigo="<%=cidade.getCodigo()%>>Atualizar</a></td>
+			<td width="70px"><a href="<%=request.getContextPath()%>delete/controller?codigo=<%=cidade.getCodigo()%>">Excluir</a></td>
 		</tr>
+		<% 
+		}
+		%>
 	</table>
 </body>
 </html>

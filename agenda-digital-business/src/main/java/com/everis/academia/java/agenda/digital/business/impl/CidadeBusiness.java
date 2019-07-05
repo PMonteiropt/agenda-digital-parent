@@ -18,13 +18,13 @@ public class CidadeBusiness implements ICidadeBusiness {
 		if (cidade.getNome() == null || cidade.getNome().trim().isEmpty()) {
 			System.out.println("primeiro");
 			throw new BusinessException("Nome Obrigatório");
-		
+
 		}
 
 		if (dao.jaExisteCidadeComNome(cidade.getNome())) {
-			System.out.println("segundo");
+
 			throw new BusinessException("Cidade já existe");
-		
+
 		}
 
 		dao.create(cidade);
@@ -40,10 +40,8 @@ public class CidadeBusiness implements ICidadeBusiness {
 	@Override
 	public void delete(Cidade cidade) {
 
-		
-		
 		dao.delete(cidade);
-		
+
 	}
 
 	@Override
@@ -52,12 +50,13 @@ public class CidadeBusiness implements ICidadeBusiness {
 		if (cidade.getNome() == null || cidade.getNome().trim().isEmpty()) {
 
 			throw new BusinessException("Nome Obrigatório");
+			
+		
 
 		}
-
-		if (dao.jaExisteCidadeComNome(cidade.getNome())) {
-			throw new BusinessException("Nome já existe");
-		}
+		
+			
+		
 		dao.update(cidade);
 
 	}
