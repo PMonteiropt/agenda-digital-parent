@@ -1,8 +1,9 @@
-package com.everis.academia.java.agenda.digital.business;
+package com.everis.academia.java.agenda.digital.business.interfaces;
 
 import java.util.Collection;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
+import com.everis.academia.java.agenda.digital.business.BusinessException;
 
 public interface ICidadeBusiness  {
 

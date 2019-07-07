@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
-import com.everis.academia.java.agenda.digital.business.ICidadeBusiness;
 import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
+import com.everis.academia.java.agenda.digital.business.interfaces.ICidadeBusiness;
 
 @WebServlet(name = "Create", urlPatterns = "/cidade/ControladorCreate")
 public class CidadeCreateController extends HttpServlet {
