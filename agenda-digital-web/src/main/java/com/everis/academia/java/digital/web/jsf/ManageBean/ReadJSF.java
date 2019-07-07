@@ -6,30 +6,26 @@ import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.business.ICidadeBusiness;
 import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 
-@ManagedBean(name="delete")
-public class DeleteJSF {
+@ManagedBean(name="read")
+public class ReadJSF {
 
 	ICidadeBusiness business = new CidadeBusiness();
 	
 	private short codigo;
-
-	public short getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(short codigo) {
-		this.codigo = codigo;
+	private String nome;
+	
+	public void readJSF() {
+		
+		
+	business.read();
+		
+		
+		
+		
+		
+		
 	}
 	
-	public void deleteCidade() {
-		
-		Cidade cidade = new Cidade();
-		
-		cidade.setCodigo(codigo);
-		
-		business.delete(cidade);
 	
-	
-	}
 
 }

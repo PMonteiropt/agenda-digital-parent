@@ -15,6 +15,8 @@ public interface ICidadeDAO {
 
 	public void delete(Cidade cidade);
 
+	public Cidade search(String nome);
+
 
 	
 

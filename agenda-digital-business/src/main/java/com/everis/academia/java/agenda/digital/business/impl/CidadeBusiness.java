@@ -48,16 +48,21 @@ public class CidadeBusiness implements ICidadeBusiness {
 	public void update(Cidade cidade) throws Exception {
 
 		if (cidade.getNome() == null || cidade.getNome().trim().isEmpty()) {
-
 			throw new BusinessException("Nome Obrigatório");
-			
-		
-
 		}
 		
-			
+		///query para ver se existe selec
+		if(dao.search(cidade.getNome()) != null) {
+			dao.update(cidade);
+		}
 		
-		dao.update(cidade);
+		
+		Cidade test = dao.search(cidade.getNome());
+		
+		//este test aqui é a cidade q encontraste na "bd
+		System.out.println(test);
+		
+		
 
 	}
 

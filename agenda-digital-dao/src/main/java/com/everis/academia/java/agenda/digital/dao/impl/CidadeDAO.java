@@ -34,6 +34,18 @@ public class CidadeDAO implements ICidadeDAO {
 	}
 
 	@Override
+	public Cidade search(String nome) {
+		Cidade cid = null;
+		for (Cidade cidade : cidades) {
+			if (cidade.getNome().equals(nome))
+				return cidade;
+		}
+		return cid;
+
+	}
+
+	
+	@Override
 	public void delete(Cidade cidade) {
 
 		// remove itera e verifica se existe objecto na lista

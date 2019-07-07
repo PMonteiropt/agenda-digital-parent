@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:u="http://java.sun.com/jsf/html">
+	
+	
+	
+	<u:form>
+		<u:outputLabel for="codigo" value="Codigo"/>
+		<u:inputText id="codigo" value="#{update.codigo}"/><br/>
+		<u:outputLabel for="nome" value="Nome:" />
+		<u:inputText id="nome" value="#{update.nome}" /><br/>
+		<u:commandButton value="Actualizar" action="#{update.updateCidade}" />
+		<u:commandButton value="Limpar" action="#{create.limpar}"/>
+		<u:outputLabel value="#{update.nome}"/>
+	</u:form>
+	
+</html>
+	
+	
+	

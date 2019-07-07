@@ -14,7 +14,7 @@ public class CreateJSF {
 	
 	
 	private String nome;
-	private String limpeza = null;
+	
 
  	public String getNome() {
 		return nome;
@@ -43,4 +43,7 @@ public class CreateJSF {
 	
 	}
 	
-	}
+	
+
+
+}
