@@ -1,6 +1,6 @@
 package com.everis.academia.java.agenda.digital.business.impl;
 
-import java.util.Collection;
+import java.util.List;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.business.BusinessException;
@@ -16,7 +16,7 @@ public class CidadeBusiness implements ICidadeBusiness {
 	public void create(Cidade cidade) throws BusinessException {
 
 		if (cidade.getNome() == null || cidade.getNome().trim().isEmpty()) {
-			
+
 			throw new BusinessException("Nome Obrigatório");
 
 		}
@@ -32,7 +32,8 @@ public class CidadeBusiness implements ICidadeBusiness {
 	}
 
 	@Override
-	public Collection<Cidade> read() {
+
+	public List<Cidade> read() {
 
 		return dao.read();
 	}
@@ -50,20 +51,13 @@ public class CidadeBusiness implements ICidadeBusiness {
 		if (cidade.getNome() == null || cidade.getNome().trim().isEmpty()) {
 			throw new BusinessException("Nome Obrigatório");
 		}
-		
-		///query para ver se existe selec
-		if(dao.search(cidade.getNome()) != null) {
+
+		/// query para ver se existe cidade na lista
+		//if (dao.search(cidade.getNome()) != null) {
 			dao.update(cidade);
 		}
-		
-		
-		
-		
-		
-		
-		
 
-	}
+	//}
 
 	public CidadeBusiness() {
 		super();

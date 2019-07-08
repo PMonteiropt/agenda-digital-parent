@@ -1,46 +1,59 @@
 package com.everis.academia.java.digital.web.jsf.ManageBean;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agenda.digital.business.interfaces.ICidadeBusiness;
 
-@ManagedBean(name="update")
+@ManagedBean(name="cidadeUpdate")
 public class UpdateJSF {
 	
 	private ICidadeBusiness business = new CidadeBusiness();
 	
-	private String nome;
-	private short codigo;
-	
-	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public short getCodigo() {
-		return codigo;
-	}
-	public void setCodigo(short codigo) {
-		this.codigo = codigo;
-	}
-	
-	
-	public void  updateCidade() throws Exception {
-		
-		Cidade cidade = new Cidade();
-		
-		cidade.setNome(nome);
-		cidade.setCodigo(codigo);
-		
-		business.update(cidade);
-	}
-	
-	
+	private Cidade cidade = new Cidade();
 
+	public Cidade getCidade() {
+		return cidade;
+	}
 
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
+	}
+	
+    public String edit(Cidade cidade) {
+    	
+    	this.cidade=cidade;
+    	
+    	return "Update";
+    }
 
+    public String update() throws Exception {
+    	
+    	
+    	try {
+    		
+    	business.update(cidade);
+    	
+    	FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,
+				"Cidade actualizada com sucesso",null));
+		
+			
+		
+		return "Read";
+    	}catch(Exception e) {
+    	
+    		FacesContext.getCurrentInstance().addMessage(null, 
+    				new FacesMessage(FacesMessage.SEVERITY_ERROR,
+    				"Erro ao atualizar cidade",
+    				
+    				
+    				
+    				e.getLocalizedMessage()));
+    				
+    				return null;
+    	}
+    }
 }

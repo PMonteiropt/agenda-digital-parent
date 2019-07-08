@@ -1,26 +1,41 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:r="http://java.sun.com/jsf/html">
+	xmlns:r="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 
 
 <r:head>
 	<title>Pagina de Read</title>
 </r:head>
-<BODY>
+<r:body>
+	<r:form>
+		<r:link value="Criar Cidade" outcome="create" />
 
-	<r:dataTable value="{read.readJSF}">
+		<r:dataTable value="#{read.cidades}" var="cidade" border="1"
+			width="100%">
 
-		<r:column>
-			<r:facet name="header">Codigo</r:facet>
+			<r:column>
+				<f:facet name="header">
+					<r:outputLabel value="Codigo" />
+				</f:facet>
+				<r:outputText value="#{cidade.codigo}" />
+			</r:column>
+			<r:column>
+				<f:facet name="header">
+					<r:outputLabel value="Nome" />
+				</f:facet>
+				<r:outputText value="#{cidade.nome}" />
+			</r:column>
+			<r:column>
+				<f:facet name="header">
+					<r:outputLabel value="Acoes"/>
+				</f:facet>
+				<r:commandLink action="#{cidadeUpdate.edit(cidade)}" value="Editar"/>
+				
+				<r:commandLink action="#{deleteCidade.delete}" value="Excluir">
+				<f:setPropertyActionListener target="#{deleteCidade.cidade}" value="#{cidade}"/>
+			</r:commandLink>
 		</r:column>
-
-		<r:column>
-			<r:facet name="header">Nome</r:facet>
-		</r:column>
-
-
-
-
-	</r:dataTable>
-
-</BODY>
+		</r:dataTable>
+	</r:form>
+</r:body>
 </html>

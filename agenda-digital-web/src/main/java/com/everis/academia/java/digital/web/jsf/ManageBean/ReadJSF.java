@@ -1,5 +1,8 @@
 package com.everis.academia.java.digital.web.jsf.ManageBean;
 
+import java.util.List;
+
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
@@ -11,13 +14,27 @@ public class ReadJSF {
 
 	ICidadeBusiness business = new CidadeBusiness();
 	
-	private short codigo;
-	private String nome;
+	private List<Cidade> cidades =  null;
+
 	
-	public void readJSF() {
+	@PostConstruct
+	public void init() {
 		
-		
-	business.read();
+		this.cidades = business.read();
+	}
+	
+	
+	
+	public List<Cidade> getCidades() {
+		return cidades;
+	}
+
+	public void setCidades(List<Cidade> cidades) {
+		this.cidades = cidades;
+	}
+	
+	
+	
 		
 		
 		
@@ -28,4 +45,4 @@ public class ReadJSF {
 	
 	
 
-}
+

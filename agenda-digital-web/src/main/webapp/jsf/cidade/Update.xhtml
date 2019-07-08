@@ -4,15 +4,13 @@
 	
 	
 	<u:form>
+		<u:messages globalOnly="true" errorStyle="color:red;" showDetail="true" showSummary="true"/>
 		<u:outputLabel for="codigo" value="Codigo"/>
-		<u:inputText id="codigo" value="#{update.codigo}"/><br/>
+		<u:inputText id="codigo" value="#{cidadeUpdate.cidade.codigo}"/><br/>
 		<u:outputLabel for="nome" value="Nome:" />
-		<u:inputText id="nome" value="#{update.nome}" /><br/>
-		<u:commandButton value="Actualizar" action="#{update.updateCidade}" />
-		<u:commandButton value="Limpar" action="#{create.limpar}"/>
-		<u:outputLabel value="#{update.nome}"/>
+		<u:inputText id="nome" value="#{cidadeUpdate.cidade.nome}" /><br/>
+		<u:commandButton value="Gravar" action="#{cidadeUpdate.update}" />
 	</u:form>
-	
 </html>
 	
 	

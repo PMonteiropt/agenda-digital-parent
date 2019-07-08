@@ -1,6 +1,6 @@
 package com.everis.academia.java.agenda.digital.business.interfaces;
 
-import java.util.Collection;
+import java.util.List;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.business.BusinessException;
@@ -9,7 +9,7 @@ public interface ICidadeBusiness  {
 
 	void create(Cidade cidade) throws BusinessException;
 
-	Collection<Cidade> read();
+	List<Cidade> read();
 
 	public void delete(Cidade cidade);
 

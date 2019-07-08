@@ -1,7 +1,6 @@
 package com.everis.academia.java.agenda.digital.dao.impl;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
@@ -9,7 +8,7 @@ import com.everis.academia.java.agenda.digital.dao.ICidadeDAO;
 
 public class CidadeDAO implements ICidadeDAO {
 
-	static List<Cidade> cidades = new ArrayList<>();
+	private static List<Cidade> cidades = new ArrayList<>();
 
 	private static short id = 0;
 
@@ -28,7 +27,7 @@ public class CidadeDAO implements ICidadeDAO {
 	}
 
 	@Override
-	public Collection<Cidade> read() {
+	public List<Cidade> read() {
 
 		return cidades;
 	}

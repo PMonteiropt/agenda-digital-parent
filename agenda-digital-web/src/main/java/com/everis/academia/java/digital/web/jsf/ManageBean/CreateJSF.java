@@ -1,6 +1,8 @@
 package com.everis.academia.java.digital.web.jsf.ManageBean;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.business.BusinessException;
@@ -12,34 +14,56 @@ public class CreateJSF {
 	
 	private ICidadeBusiness business = new CidadeBusiness();
 	
+	private Cidade cidade = new Cidade();
 	
-	private String nome;
+	
 	
 
- 	public String getNome() {
-		return nome;
+ 	public Cidade getCidade() {
+		return cidade;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setCidade(Cidade cidade) {
+		this.cidade=cidade;
 	}
 	
-	public void criarCidade() throws BusinessException {
+	public String criarCidade() throws BusinessException {
 		
-		Cidade cidade = new Cidade();
+		try {
+			business.create(cidade);
+			
+			FacesContext.getCurrentInstance().addMessage("nome", new FacesMessage(FacesMessage.SEVERITY_INFO,
+				"Cidade criada com sucesso",null));
 		
-		cidade.setNome(nome);
+			
 		
-		business.create(cidade);
 		
+		return "Read";
+		}catch(Exception e) {
+			
+			FacesContext.getCurrentInstance().addMessage("nome", 
+			new FacesMessage(FacesMessage.SEVERITY_ERROR,
+			"Erro ao criar cidade",
+			
+			
+			
+			e.getLocalizedMessage()));
+			
+			return null;
+		}
 		
 		
 		
 	}
+	
+	
+	
 	
 	public String limpar() {
 
-		return nome=null;
+		this.cidade = new Cidade();
+		
+		return null;
 	
 	}
 	

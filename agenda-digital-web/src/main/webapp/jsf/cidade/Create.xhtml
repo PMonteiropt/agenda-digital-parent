@@ -6,12 +6,13 @@
 	<title>Pagina de Create</title>
 </c:head>
 <c:body>
-	<c:form>
+	
+	<c:form prependId="false">
+		<c:messages for="nome"/>
 		<c:outputLabel for="nome" value="Nome:" />
-		<c:inputText id="nome" value="#{create.nome}" /><br/>
+		<c:inputText id="nome" value="#{create.cidade.nome}" /><br/>
 		<c:commandButton value="Criar" action="#{create.criarCidade}" />
 		<c:commandButton value="Limpar" action="#{create.limpar}"/>
-		<c:outputLabel value="#{create.nome}"/>
-	</c:form>
+		</c:form>
 </c:body>
 </html>
