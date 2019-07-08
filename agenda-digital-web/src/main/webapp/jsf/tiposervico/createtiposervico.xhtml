@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsf/html">
+
+
+<c:head>
+	<title>Create Tipo Servico</title>
+</c:head>
+<c:body>
+	
+	<c:form>
+		<c:messages for="codigo"/>
+		
+		<h2>Tipo Servico</h2>
+		
+		
+		<h3>Descrição</h3>
+		<c:inputText id="descricao" value="#{createTipoServico.tiposervico.descricao}"/>
+		<c:outputLabel for="@previous" value="" /><br/>
+		<br/>
+		
+		
+		
+		<c:commandButton value="Criar" action="#{createTipoServico.criarTipoServico}" />
+		
+		</c:form>
+</c:body>
+</html>

@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsf/html">
+	
+	
+	<p:dataTable var="tipo" value="#{dtBasicView.cars}">
+    <p:column headerText="Codigo">
+        <h:outputText value="#{car.id}" />
+    </p:column>
+ 
+    <p:column headerText="Descricao">
+        <h:outputText value="#{car.year}" />
+    </p:column>
+	
+	
+	
+	
+</html>
