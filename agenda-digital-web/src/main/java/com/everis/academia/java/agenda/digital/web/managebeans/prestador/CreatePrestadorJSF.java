@@ -1,4 +1,4 @@
-package com.everis.academia.java.agenda.digital.web.prestador.managedbeans;
+package com.everis.academia.java.agenda.digital.web.managebeans.prestador;
 
 import javax.faces.bean.ManagedBean;
 

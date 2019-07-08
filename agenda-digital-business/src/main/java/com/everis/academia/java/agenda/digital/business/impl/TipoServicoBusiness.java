@@ -1,5 +1,7 @@
 package com.everis.academia.java.agenda.digital.business.impl;
 
+import java.util.List;
+
 import com.everis.academia.agenda.digital.entity.TipoServico;
 import com.everis.academia.java.agenda.digital.business.interfaces.ITipoServicoBusiness;
 import com.everis.academia.java.agenda.digital.dao.ITipoServicoDAO;
@@ -31,9 +33,9 @@ public class TipoServicoBusiness implements ITipoServicoBusiness {
 	}
 
 	@Override
-	public void readTipoServico() {
+	public List<TipoServico> readTipoServico() {
 		
-
+		return daotipo.readTipoServico();
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.everis.academia.java.digital.web.jsf.ManageBean;
+package com.everis.academia.java.agenda.digital.web.managebeans.cidade;
 
 import javax.faces.bean.ManagedBean;
 

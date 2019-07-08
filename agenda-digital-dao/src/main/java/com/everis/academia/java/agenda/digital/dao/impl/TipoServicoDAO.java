@@ -19,6 +19,8 @@ public class TipoServicoDAO implements ITipoServicoDAO {
 		
 		tiposervico.setCodigo(id);
 		
+		tiposervicos.add(tiposervico);
+		
 
 	}
 
@@ -35,9 +37,10 @@ public class TipoServicoDAO implements ITipoServicoDAO {
 	}
 
 	@Override
-	public void readTipoServico() {
 	
-
+	public List<TipoServico> readTipoServico() {
+	
+		return tiposervicos;
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.everis.academia.java.agenda.digital.business.interfaces;
 
+import java.util.List;
+
 import com.everis.academia.agenda.digital.entity.TipoServico;
 
 public interface ITipoServicoBusiness {
@@ -12,8 +14,8 @@ public interface ITipoServicoBusiness {
 	
 	public void updateTipoServico();
 	
-	public void readTipoServico();
+	public List<TipoServico> readTipoServico();
 
-
+	
 
 }

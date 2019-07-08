@@ -1,17 +1,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:c="http://java.sun.com/jsf/html">
+	xmlns:p="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<p:dataTable var="tipo" value="#{readTipoServico.servico}" bordder="1"
+	width="100%">
 	
+
+	<p:column>
+		<f:facet name="header">
+			<p:outputLabel value="Codigo" />
+		</f:facet>
+		<p:outputText value="#{servico.codigo}" />
+	</p:column>
 	
-	<p:dataTable var="tipo" value="#{dtBasicView.cars}">
-    <p:column headerText="Codigo">
-        <h:outputText value="#{car.id}" />
-    </p:column>
- 
-    <p:column headerText="Descricao">
-        <h:outputText value="#{car.year}" />
-    </p:column>
-	
-	
-	
-	
+	<p:column>
+		
+		<f:facet name="header">
+			<p:outputLabel value="Descricao" />
+		</f:facet>
+		<p:outputText value="#{servico.descricao}" />
+	</p:column>
+
+
+
+</p:dataTable>
 </html>

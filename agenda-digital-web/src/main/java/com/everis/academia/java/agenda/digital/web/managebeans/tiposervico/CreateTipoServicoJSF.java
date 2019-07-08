@@ -1,4 +1,4 @@
-package com.everis.academia.java.agenda.digital.web.prestador.managedbeans;
+package com.everis.academia.java.agenda.digital.web.managebeans.tiposervico;
 
 import javax.faces.bean.ManagedBean;
 
@@ -28,7 +28,7 @@ public class CreateTipoServicoJSF {
 	
 	businesstipo.createTipoServico(tiposervico);
 	
-	return null;
+	return "readtiposervico";
 	
 
 	}

@@ -1,9 +1,13 @@
 package com.everis.academia.java.agenda.digital.dao;
 
+import java.util.List;
+
 import com.everis.academia.agenda.digital.entity.TipoServico;
 
 public interface ITipoServicoDAO {
 
+
+	
 
 	public void createTipoServico(TipoServico tiposervico);
 	
@@ -12,7 +16,7 @@ public interface ITipoServicoDAO {
 	
 	public void updateTipoServico();
 	
-	public void readTipoServico();
+	List<TipoServico> readTipoServico();
 
 
 }
