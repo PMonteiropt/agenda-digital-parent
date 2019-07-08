@@ -40,10 +40,21 @@
 
 		</dependency>
 
+	<dependency>
+	<groupId>com.sun.xml.ws</groupId>
+	<artifactId>jaxws-rt</artifactId>
+	<version>2.3.2</version>
+	</dependency>
+	
+	
 	</dependencies>
 
 
 	<build>
 		<finalName>agenda-digital-web</finalName>
 	</build>
+	
+
+
+
 </project>
