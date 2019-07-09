@@ -10,10 +10,10 @@ public interface ITipoServicoBusiness {
 
 	public void createTipoServico(TipoServico tiposervico) throws BusinessException;
 	
-	public void deleteTipoServico(TipoServico tiposervico);
+	public void deleteTipoServico(TipoServico tiposervico) throws BusinessException;
 		
 	
-	public void updateTipoServico();
+	public void updateTipoServico(TipoServico tiposervico);
 	
 	public List<TipoServico> readTipoServico();
 

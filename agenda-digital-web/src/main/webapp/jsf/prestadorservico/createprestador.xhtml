@@ -1,48 +1,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:p="http://java.sun.com/jsf/html">
+	xmlns:c="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
 
 <body>
 
-	<p:form>
+	<c:form>
 
-		<p:outputLabel for="nome" value="Nome:" />
-		<p:inputText id="codigo" value="" />
+		
 
 		<p:outputLabel for="cidade" value="Cidade:" />
-		<p:inputText id="cidade" value= />
+		<p:inputText id="cidade" value="#{createPrestador.criarPrestadorServico.cidade}" />
 
 		<p:outputLabel for="bairro" value="Bairro:" />
-		<p:inputText id="cidade" value= />
+		<p:inputText id="cidade" value="#{createPrestador.criarPrestadorServico.bairro}" />
 
 		<p:outputLabel id="cep" value="CEP:" />
-		<p:inputText id="cep" value=/>
+		<p:inputText id="cep" value="#{createPrestador.criarPrestadorServico.cep}"/>
 
 		<p:outputLabel id="tipologradouro" value="Tipo de Logradouro:" />
-		<p:inputText id="tipoLogradouro" value= />
+		<p:inputText id="tipoLogradouro" value="#{createPrestador.criarPrestadorServico.tipoLogradouro}" />
 
 		<p:outputLabel id="logradouro" value="Logradouro:" />
-		<p:inputText id="logradouro" value= />
+		<p:inputText id="logradouro" value="#{createPrestador.criarPrestadorServico.logradouro}" />
 
 		<p:outputLabel id="complemento" value="Complemento:" />
-		<p:inputText id="complmento" value= />
+		<p:inputText id="complmento" value= "#{createPrestador.criarPrestadorServico.complemento}"/>
 
 		<p:outputLabel id="numero" value="Numero:" />
-		<p:inputText id="numero" value= />
+		<p:inputText id="numero" value="#{createPrestador.criarPrestadorServico.numero}" />
 
 		<p:outputLabel id="email" value="Email:" />
-		<p:inputText id="numero" value= />
-	</p:form>
+		<p:inputText id="numero" value="#{createPrestador.criarPrestadorServico.email}" />
+	</c:form>
 
-	<p:commandButton value="Criar" action= />
-
-
-
-</body>
+	<p:commandButton value="Criar" action="createPrestador.criarPrestadorServico"/>
 
 
 
-
-
-
+	</body>
 </html>

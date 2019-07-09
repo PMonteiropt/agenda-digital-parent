@@ -4,6 +4,7 @@ import javax.faces.bean.ManagedBean;
 
 import com.everis.academia.agenda.digital.entity.PrestadorServico;
 import com.everis.academia.agenda.digital.entity.TipoServico;
+import com.everis.academia.java.agenda.digital.business.BusinessException;
 import com.everis.academia.java.agenda.digital.business.impl.PrestadorServicoBusiness;
 import com.everis.academia.java.agenda.digital.business.impl.TipoServicoBusiness;
 import com.everis.academia.java.agenda.digital.business.interfaces.IPrestadorServicoBusiness;
@@ -24,7 +25,7 @@ public class DeleteTipoServico {
 			this.tiposervico = tiposervico;
 		}
 		
-		public void removeTipoServico() {
+		public void removeTipoServico() throws BusinessException {
 			
 			
 			businesstipo.deleteTipoServico(tiposervico);

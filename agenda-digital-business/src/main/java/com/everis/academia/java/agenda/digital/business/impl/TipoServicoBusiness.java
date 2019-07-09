@@ -32,15 +32,19 @@ public class TipoServicoBusiness implements ITipoServicoBusiness {
 	}
 
 	@Override
-	public void deleteTipoServico(TipoServico tiposervico) {
+	public void deleteTipoServico(TipoServico tiposervico) throws BusinessException {
 	
-
+		if(tiposervico.getCodigo()==null) {
+			throw new BusinessException("Codigo Obrigatório para eliminar Tipo de Serviço");
+			
+		}
+		daotipo.deleteTipoServico(tiposervico);
 	}
 
 	@Override
-	public void updateTipoServico() {
+	public void updateTipoServico(TipoServico tiposervico) {
 		
-
+		daotipo.updateTipoServico(tiposervico);
 	}
 
 	@Override

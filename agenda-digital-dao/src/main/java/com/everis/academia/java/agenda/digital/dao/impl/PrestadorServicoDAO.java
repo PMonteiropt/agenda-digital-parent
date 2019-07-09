@@ -11,12 +11,16 @@ public class PrestadorServicoDAO implements IPrestadorServicoDAO {
 	
 	private static List<PrestadorServico> prestadordeservicos = new ArrayList<>();
 	
-	private static short id = 0;
+	private static int id = 0;
 	
 	@Override
 	public void create(PrestadorServico prestador) {
 		
 		id++;
+		
+		prestador.setCodigo(id);
+		
+		prestadordeservicos.add(prestador);
 		
 		
 		

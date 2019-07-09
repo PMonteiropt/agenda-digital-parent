@@ -7,11 +7,11 @@ import com.everis.academia.java.agenda.digital.business.BusinessException;
 
 public interface IPrestadorServicoBusiness {
 
-	public void createPrestador(PrestadorServico servico) throws BusinessException;
+	public void createPrestador(PrestadorServico prestador) throws BusinessException;
 		
-	public void updatePrestador(PrestadorServico servico);
+	public void updatePrestador(PrestadorServico prestador);
 	
-	public void deletePrestador(PrestadorServico servico);
+	public void deletePrestador(PrestadorServico prestador);
 
 	Collection<PrestadorServico> read();
 

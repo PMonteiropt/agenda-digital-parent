@@ -11,10 +11,10 @@ public interface ITipoServicoDAO {
 
 	public void createTipoServico(TipoServico tiposervico);
 	
-	public void deleteTipoServico();
+	public void deleteTipoServico(TipoServico tiposervico);
 		
 	
-	public void updateTipoServico();
+	public void updateTipoServico(TipoServico tiposervico);
 	
 	List<TipoServico> readTipoServico();
 

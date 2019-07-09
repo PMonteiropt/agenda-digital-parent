@@ -25,15 +25,16 @@ public class TipoServicoDAO implements ITipoServicoDAO {
 	}
 
 	@Override
-	public void deleteTipoServico() {
+	public void deleteTipoServico(TipoServico tiposervico) {
 		
-
+		tiposervicos.remove(tiposervico);
 	}
 
 	@Override
-	public void updateTipoServico() {
+	public void updateTipoServico(TipoServico tiposervico) {
 		
-
+		int indexOf = tiposervicos.indexOf(tiposervico);
+		tiposervicos.set(indexOf, tiposervico);
 	}
 
 	@Override
