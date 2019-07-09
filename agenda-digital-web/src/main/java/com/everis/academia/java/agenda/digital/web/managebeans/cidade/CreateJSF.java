@@ -9,7 +9,7 @@ import com.everis.academia.java.agenda.digital.business.BusinessException;
 import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agenda.digital.business.interfaces.ICidadeBusiness;
 
-@ManagedBean(name="create")
+@ManagedBean(name="createCidade")
 public class CreateJSF {
 	
 	private ICidadeBusiness business = new CidadeBusiness();

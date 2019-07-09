@@ -1,41 +1,42 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:r="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:c="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
 
-<r:head>
+<c:head>
 	<title>Pagina de Read</title>
-</r:head>
-<r:body>
-	<r:form>
-		<r:link value="Criar Cidade" outcome="create" />
+</c:head>
+<c:body>
+	<c:form>
+		<p:link value="Criar Cidade" outcome="create" />
 
-		<r:dataTable value="#{read.cidades}" var="cidade" border="1"
+		<p:dataTable value="#{read.cidades}" var="cidade" border="1"
 			width="100%">
 
-			<r:column>
+			<p:column>
 				<f:facet name="header">
-					<r:outputLabel value="Codigo" />
+					<c:outputLabel value="Codigo" />
 				</f:facet>
-				<r:outputText value="#{cidade.codigo}" />
-			</r:column>
-			<r:column>
+				<p:outputText value="#{cidade.codigo}" />
+			</p:column>
+			<p:column>
 				<f:facet name="header">
-					<r:outputLabel value="Nome" />
+					<c:outputLabel value="Nome" />
 				</f:facet>
-				<r:outputText value="#{cidade.nome}" />
-			</r:column>
-			<r:column>
+				<p:outputText value="#{cidade.nome}" />
+			</p:column>
+			<p:column>
 				<f:facet name="header">
-					<r:outputLabel value="Acoes"/>
+					<c:outputLabel value="Acoes"/>
 				</f:facet>
-				<r:commandLink action="#{cidadeUpdate.edit(cidade)}" value="Editar"/>
+				<p:commandLink action="#{cidadeUpdate.edit(cidade)}" value="Editar"/>
 				
-				<r:commandLink action="#{deleteCidade.delete}" value="Excluir">
+				<p:commandLink action="#{deleteCidade.delete}" value="Excluir">
 				<f:setPropertyActionListener target="#{deleteCidade.cidade}" value="#{cidade}"/>
-			</r:commandLink>
-		</r:column>
-		</r:dataTable>
-	</r:form>
-</r:body>
+			</p:commandLink>
+		</p:column>
+		</p:dataTable>
+	</c:form>
+</c:body>
 </html>

@@ -1,27 +1,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:p="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:c="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
-<p:dataTable var="tipo" value="#{readTipoServico.servico}" bordder="1"
-	width="100%">
-	
 
-	<p:column>
+<c:body>
+
+	<p:dataTable var="tiposervico" value="#{readTipoServico.servico}">
 		<f:facet name="header">
-			<p:outputLabel value="Codigo" />
+		Tipos de Servico
 		</f:facet>
-		<p:outputText value="#{servico.codigo}" />
-	</p:column>
-	
-	<p:column>
 		
-		<f:facet name="header">
-			<p:outputLabel value="Descricao" />
-		</f:facet>
-		<p:outputText value="#{servico.descricao}" />
-	</p:column>
+		<p:column headerText="Codigo">
+			<c:outputText value="#{tiposervico.codigo]"/>
+		</p:column>
+		
+		<p:column headerText="Descricao">
+			<c:outputText value="#{tiposervico.codigo}"/>
+		</p:column>
+	
 
 
 
-</p:dataTable>
+
+
+	</p:dataTable>
+</c:body>
 </html>

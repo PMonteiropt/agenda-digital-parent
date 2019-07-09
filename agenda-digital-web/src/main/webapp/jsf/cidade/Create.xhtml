@@ -1,5 +1,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:c="http://java.sun.com/jsf/html">
+	xmlns:c="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
 
 
 <c:head>
@@ -8,11 +11,13 @@
 <c:body>
 	
 	<c:form prependId="false">
-		<c:messages for="nome"/>
-		<c:outputLabel for="nome" value="Nome:" />
-		<c:inputText id="nome" value="#{create.cidade.nome}" /><br/>
-		<c:commandButton value="Criar" action="#{create.criarCidade}" />
-		<c:commandButton value="Limpar" action="#{create.limpar}"/>
+		<h2>Criar Cidade</h2>
+		<h3>Nome:</h3>
+	
+		<p:inputText id="nome" value="#{createCidade.cidade.nome}" /><br/>
+		<br/>
+		<p:commandButton value="Criar" action="#{createCidade.criarCidade}" />
+		<p:commandButton value="Limpar" action="#{createCidade.limpar}"/>
 		</c:form>
 </c:body>
 </html>

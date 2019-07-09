@@ -1,28 +1,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:c="http://java.sun.com/jsf/html">
+	xmlns:c="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 
 <c:head>
 	<title>Create Tipo Servico</title>
 </c:head>
 <c:body>
-	
+
 	<c:form>
-		<c:messages for="codigo"/>
-		
 		<h2>Tipo Servico</h2>
-		
-		
+
+
 		<h3>Descrição</h3>
-		<c:inputText id="descricao" value="#{createTipoServico.tiposervico.descricao}"/>
-		
-		<br/>
-		<br/>
-		
-		
-		<c:commandButton value="Criar" action="#{createTipoServico.criarTipoServico}" />
-		
-		
-		</c:form>
+		<p:inputText id="descricao"
+			value="#{createTipoServico.tiposervico.descricao}" />
+
+		<br />
+		<br />
+
+
+		<p:commandButton value="Criar"
+			action="#{createTipoServico.criarTipoServico}" />
+
+
+	</c:form>
 </c:body>
 </html>

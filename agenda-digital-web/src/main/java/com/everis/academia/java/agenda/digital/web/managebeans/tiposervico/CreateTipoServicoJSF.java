@@ -3,6 +3,7 @@ package com.everis.academia.java.agenda.digital.web.managebeans.tiposervico;
 import javax.faces.bean.ManagedBean;
 
 import com.everis.academia.agenda.digital.entity.TipoServico;
+import com.everis.academia.java.agenda.digital.business.BusinessException;
 import com.everis.academia.java.agenda.digital.business.impl.TipoServicoBusiness;
 import com.everis.academia.java.agenda.digital.business.interfaces.ITipoServicoBusiness;
 
@@ -24,7 +25,7 @@ public class CreateTipoServicoJSF {
 		this.tiposervico = tiposervico;
 	}
 	
-	public String criarTipoServico() {
+	public String criarTipoServico() throws BusinessException {
 	
 	businesstipo.createTipoServico(tiposervico);
 	
