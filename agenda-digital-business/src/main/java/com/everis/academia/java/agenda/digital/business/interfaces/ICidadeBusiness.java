@@ -11,7 +11,7 @@ public interface ICidadeBusiness  {
 
 	List<Cidade> read();
 
-	public void delete(Cidade cidade);
+	public void delete (Cidade cidade) throws BusinessException;
 
 	public void update(Cidade cidade) throws Exception;
 

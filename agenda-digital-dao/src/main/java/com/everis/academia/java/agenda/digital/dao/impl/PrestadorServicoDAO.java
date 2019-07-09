@@ -1,14 +1,22 @@
 package com.everis.academia.java.agenda.digital.dao.impl;
 
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.everis.academia.agenda.digital.entity.PrestadorServico;
 import com.everis.academia.java.agenda.digital.dao.IPrestadorServicoDAO;
 
 public class PrestadorServicoDAO implements IPrestadorServicoDAO {
 
+	
+	private static List<PrestadorServico> prestadordeservicos = new ArrayList<>();
+	
+	private static short id = 0;
+	
 	@Override
 	public void create(PrestadorServico prestador) {
+		
+		id++;
 		
 
 	}
@@ -25,7 +33,7 @@ public class PrestadorServicoDAO implements IPrestadorServicoDAO {
 	}
 
 	@Override
-	public Collection<PrestadorServico> read() {
+	public List<PrestadorServico> read() {
 		
 		return null;
 	}

@@ -39,8 +39,14 @@ public class CidadeBusiness implements ICidadeBusiness {
 	}
 
 	@Override
-	public void delete(Cidade cidade) {
+	public void delete(Cidade cidade) throws BusinessException {
 
+		if(cidade.getCodigo()==null) {
+			
+			throw new BusinessException("O codigo é obrigatório para Remover Cidade");
+		}
+		
+		
 		dao.delete(cidade);
 
 	}
