@@ -27,8 +27,8 @@
 			</p:column>	
 				
 			<p:column>
-				<p:commandLink action="#{deleteCidade.delete}" value="Excluir" update="@form">
-					<f:setPropertyActionListener target="#{deleteCidade.cidades}" value="#{cidade}"/>
+				<p:commandLink action="#{deleteCidade.delete}" value="Excluir">
+					<f:setPropertyActionListener target="#{deleteCidade.cidade}" value="#{cidade}"/>
 			</p:commandLink>
 		</p:column>
 		</p:dataTable>
