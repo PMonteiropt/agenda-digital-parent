@@ -1,17 +1,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:u="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<body>
+
+<h:form>
 	
-	
-	
-	<u:form>
-		<u:messages globalOnly="true" errorStyle="color:red;" showDetail="true" showSummary="true"/>
-		<u:outputLabel for="codigo" value="Codigo"/>
-		<u:inputText id="codigo" value="#{cidadeUpdate.cidade.codigo}"/><br/>
-		<u:outputLabel for="nome" value="Nome:" />
-		<u:inputText id="nome" value="#{cidadeUpdate.cidade.nome}" /><br/>
-		<u:commandButton value="Gravar" action="#{cidadeUpdate.update}" />
-	</u:form>
+	<h:outputLabel for="codigo" value="Codigo" />
+	<h:inputText id="codigo" value="#{cidadeUpdate.cidade.codigo}" />
+	<br />
+	<h:outputLabel for="nome" value="Nome:" />
+	<h:inputText id="nome" value="#{cidadeUpdate.cidade.nome}" />
+	<br />
+	<h:commandButton value="Gravar" action="#{cidadeUpdate.update}" />
+</h:form>
+</body>
 </html>
-	
-	
-	
+
+
