@@ -11,7 +11,7 @@ import com.everis.academia.java.agenda.digital.business.interfaces.IPrestadorSer
 @ManagedBean(name="createPrestador")
 public class CreatePrestadorJSF {
 
-		
+		private String enumprestador;
 
 	
 	
@@ -25,6 +25,13 @@ public class CreatePrestadorJSF {
 
 		public void setPrestadorservico(PrestadorServico prestadorservico) {
 			this.prestadorservico = prestadorservico;
+		}
+		
+		public String returnEnum() {
+			
+			
+			
+			return enumprestador;
 		}
 		
 		
