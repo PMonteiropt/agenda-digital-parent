@@ -2,15 +2,20 @@ package com.everis.academia.java.agenda.digital.business.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.business.BusinessException;
 import com.everis.academia.java.agenda.digital.business.interfaces.ICidadeBusiness;
 import com.everis.academia.java.agenda.digital.dao.ICidadeDAO;
-import com.everis.academia.java.agenda.digital.dao.impl.CidadeDAO;
 
+@Service
 public class CidadeBusiness implements ICidadeBusiness {
 
-	private ICidadeDAO dao = new CidadeDAO();
+	@Autowired
+	private ICidadeDAO dao;
+	
 
 	@Override
 	public void create(Cidade cidade) throws BusinessException {

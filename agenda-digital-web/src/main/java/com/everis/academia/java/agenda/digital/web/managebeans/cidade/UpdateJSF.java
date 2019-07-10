@@ -4,14 +4,16 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 
+import org.springframework.stereotype.Component;
+
 import com.everis.academia.agenda.digital.entity.Cidade;
-import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agenda.digital.business.interfaces.ICidadeBusiness;
 
 @ManagedBean(name="cidadeUpdate")
+@Component("cidadeUpdate")
 public class UpdateJSF {
 	
-	private ICidadeBusiness business = new CidadeBusiness();
+	private ICidadeBusiness business;
 	
 	private Cidade cidade = new Cidade();
 

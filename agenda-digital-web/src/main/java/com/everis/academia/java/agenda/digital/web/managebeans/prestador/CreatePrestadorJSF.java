@@ -2,20 +2,25 @@ package com.everis.academia.java.agenda.digital.web.managebeans.prestador;
 
 import javax.faces.bean.ManagedBean;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
+
 import com.everis.academia.agenda.digital.entity.PrestadorServico;
-import com.everis.academia.agenda.digital.entity.TipoServico;
+import com.everis.academia.agenda.digital.enums.TipoLogradouro;
 import com.everis.academia.java.agenda.digital.business.BusinessException;
-import com.everis.academia.java.agenda.digital.business.impl.PrestadorServicoBusiness;
 import com.everis.academia.java.agenda.digital.business.interfaces.IPrestadorServicoBusiness;
 
 @ManagedBean(name="createPrestador")
+@Component("createPrestador")
+@RequestScope
 public class CreatePrestadorJSF {
 
-		private String enumprestador;
+		
 
 	
-	
-		private IPrestadorServicoBusiness businessprestador = new PrestadorServicoBusiness();
+		@Autowired
+		private IPrestadorServicoBusiness businessprestador;
 		
 		private PrestadorServico prestadorservico = new PrestadorServico();
 
@@ -27,11 +32,14 @@ public class CreatePrestadorJSF {
 			this.prestadorservico = prestadorservico;
 		}
 		
-		public String returnEnum() {
+		
+		
+		
+		public TipoLogradouro[] returnEnum() {
 			
 			
+			return TipoLogradouro.values();
 			
-			return enumprestador;
 		}
 		
 		

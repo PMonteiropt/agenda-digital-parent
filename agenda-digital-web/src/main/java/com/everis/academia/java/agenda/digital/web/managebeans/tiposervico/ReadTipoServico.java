@@ -5,31 +5,35 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.everis.academia.agenda.digital.entity.TipoServico;
-import com.everis.academia.java.agenda.digital.business.impl.TipoServicoBusiness;
 import com.everis.academia.java.agenda.digital.business.interfaces.ITipoServicoBusiness;
 
 @ManagedBean(name="readTipoServico")
+@Component("readTipoServico")
 public class ReadTipoServico {
 
-	ITipoServicoBusiness businesstipo = new TipoServicoBusiness();
+	@Autowired
+	private ITipoServicoBusiness businesstipo;
 	
-	private List<TipoServico> servico = null;
+	private List<TipoServico> servicos = null;
 	
 	@PostConstruct
 	public void init() {
 		
-		this.servico=businesstipo.readTipoServico();
+		this.servicos=businesstipo.readTipoServico();
 		
 		
 	}
 
 	public List<TipoServico> getServico() {
-		return servico;
+		return servicos;
 	}
 
 	public void setServico(List<TipoServico> servico) {
-		this.servico = servico;
+		this.servicos = servico;
 	}
 
 	

@@ -4,45 +4,51 @@
 	xmlns:p="http://primefaces.org/ui">
 
 
-<body>
+<h:body>
 
 	<h:form>
 
-		
+
 
 		<p:outputLabel for="cidade" value="Cidade:" />
-		<p:inputText id="cidade" value="#{createPrestador.criarPrestadorServico.cidade}" />
+		<p:inputText id="cidade"
+			value="#{createPrestador.criarPrestadorServico.cidade}" />
 
 		<p:outputLabel for="bairro" value="Bairro:" />
-		<p:inputText id="cidade" value="#{createPrestador.criarPrestadorServico.bairro}" />
+		<p:inputText id="cidade"
+			value="#{createPrestador.criarPrestadorServico.bairro}" />
 
 		<p:outputLabel id="cep" value="CEP:" />
-		<p:inputText id="cep" value="#{createPrestador.criarPrestadorServico.cep}"/>
+		<p:inputText id="cep"
+			value="#{createPrestador.criarPrestadorServico.cep}" />
 
-		<h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-			<p:outputLabel for="enumprestador" value="Tipo de Logradouro"/>
-			<p:selectOneMenu id="enumprestador" value="" dynamix="true" style="width:125px">
-				<f:selectItem itemLabel="Escolha uma Opção" itemValue=""/>
-				<f:selectItems value="#{createPrestdorJSF.returnEnum}"/>
-			</p:selectOneMenu>
-		</h:panelGrid>
+		<p:outputLabel for="enum" value="Tipo de Logradouro"/>
+		<p:selectOneMenu id="enum" value="#{createPrestador.returnEnum}"/>
+			<f:selectItem itemLabel="Escolha uma Opção" itemValue=""/>
+			<f:selectItems value="#{createPrestador.returnEnum}"/>
+		</p:selectOneMenu>
 
 		<p:outputLabel id="logradouro" value="Logradouro:" />
-		<p:inputText id="logradouro" value="#{createPrestador.criarPrestadorServico.logradouro}" />
+		<p:inputText id="logradouro"
+			value="#{createPrestador.criarPrestadorServico.logradouro}" />
 
 		<p:outputLabel id="complemento" value="Complemento:" />
-		<p:inputText id="complmento" value= "#{createPrestador.criarPrestadorServico.complemento}"/>
+		<p:inputText id="complmento"
+			value="#{createPrestador.criarPrestadorServico.complemento}" />
 
 		<p:outputLabel id="numero" value="Numero:" />
-		<p:inputText id="numero" value="#{createPrestador.criarPrestadorServico.numero}" />
+		<p:inputText id="numero"
+			value="#{createPrestador.criarPrestadorServico.numero}" />
 
 		<p:outputLabel id="email" value="Email:" />
-		<p:inputText id="numero" value="#{createPrestador.criarPrestadorServico.email}" />
+		<p:inputText id="numero"
+			value="#{createPrestador.criarPrestadorServico.email}" />
 	</h:form>
 
-	<p:commandButton value="Criar" action="createPrestador.criarPrestadorServico"/>
+	<p:commandButton value="Criar"
+		action="createPrestador.criarPrestadorServico" />
 
 
 
-	</body>
+</h:body>
 </html>

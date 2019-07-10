@@ -8,16 +8,20 @@
 <c:head>
 	<title>Create Cidade</title>
 </c:head>
+
 <c:body>
-	
+
 	<c:form prependId="false">
 		<h2>Criar Cidade</h2>
 		<h3>Nome:</h3>
-	
-		<p:inputText id="nome" value="#{createCidade.cidade.nome}" /><br/>
-		<br/>
-		<p:commandButton value="Criar" action="#{createCidade.criarCidade}" />
-		<p:commandButton value="Limpar" action="#{createCidade.limpar}"/>
-		</c:form>
+
+		<p:inputText id="nome" value="#{createCidade.cidade.nome}" />
+		<br />
+		<br />
+		<p:commandButton value="Criar" action="#{createCidade.criarCidade}"
+			update="@form" />
+		<p:commandButton value="Limpar" action="#{createCidade.limpar}"
+			update="@form" />
+	</c:form>
 </c:body>
 </html>

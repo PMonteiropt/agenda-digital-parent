@@ -2,24 +2,25 @@ package com.everis.academia.java.agenda.digital.business.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.everis.academia.agenda.digital.entity.TipoServico;
 import com.everis.academia.java.agenda.digital.business.BusinessException;
 import com.everis.academia.java.agenda.digital.business.interfaces.ITipoServicoBusiness;
 import com.everis.academia.java.agenda.digital.dao.ITipoServicoDAO;
-import com.everis.academia.java.agenda.digital.dao.impl.TipoServicoDAO;
 
+@Service
 public class TipoServicoBusiness implements ITipoServicoBusiness {
 
-	private ITipoServicoDAO daotipo = new TipoServicoDAO();
+	@Autowired
+	private ITipoServicoDAO daotipo;
 	
 	
 	@Override
 	public void createTipoServico(TipoServico tiposervico) throws BusinessException {
 		
-		if(tiposervico.getCodigo()==null) {	
-			throw new BusinessException("Codigo Obrigatório");
 		
-		}
 		
 		if(tiposervico.getDescricao()==null) {
 			throw new BusinessException("Descrição Obrigatória");

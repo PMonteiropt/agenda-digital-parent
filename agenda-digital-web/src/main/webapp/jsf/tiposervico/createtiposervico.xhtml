@@ -5,26 +5,22 @@
 
 
 <c:head>
-	<title>Create Tipo Servico</title>
+	<title>Criar Tipo de Servico</title>
 </c:head>
+
 <c:body>
 
-	<c:form>
+	<c:form preprendId="false">
 		<h2>Tipo Servico</h2>
-
-
 		<h3>Descrição</h3>
+
 		<p:inputText id="descricao"
 			value="#{createTipoServico.tiposervico.descricao}" />
 
 		<br />
-		<br />
-
-
+		<br/>
 		<p:commandButton value="Criar"
-			action="#{createTipoServico.criarTipoServico}" />
-
-
+			action="#{createTipoServico.criarTipoServico}" update="@form" />
 	</c:form>
 </c:body>
 </html>

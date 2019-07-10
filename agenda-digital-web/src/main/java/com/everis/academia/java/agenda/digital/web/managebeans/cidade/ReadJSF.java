@@ -5,14 +5,18 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.everis.academia.agenda.digital.entity.Cidade;
-import com.everis.academia.java.agenda.digital.business.impl.CidadeBusiness;
 import com.everis.academia.java.agenda.digital.business.interfaces.ICidadeBusiness;
 
 @ManagedBean(name="read")
+@Component("read")
 public class ReadJSF {
 
-	ICidadeBusiness business = new CidadeBusiness();
+	@Autowired
+	private ICidadeBusiness business;
 	
 	private List<Cidade> cidades =  null;
 

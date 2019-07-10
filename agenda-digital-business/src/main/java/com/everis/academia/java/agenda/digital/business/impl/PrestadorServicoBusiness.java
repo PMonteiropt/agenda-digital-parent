@@ -2,15 +2,19 @@ package com.everis.academia.java.agenda.digital.business.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.everis.academia.agenda.digital.entity.PrestadorServico;
 import com.everis.academia.java.agenda.digital.business.BusinessException;
 import com.everis.academia.java.agenda.digital.business.interfaces.IPrestadorServicoBusiness;
 import com.everis.academia.java.agenda.digital.dao.IPrestadorServicoDAO;
-import com.everis.academia.java.agenda.digital.dao.impl.PrestadorServicoDAO;
 
+@Service
 public class PrestadorServicoBusiness implements IPrestadorServicoBusiness {
 
-	private IPrestadorServicoDAO daoprestador = new PrestadorServicoDAO();
+	@Autowired
+	private IPrestadorServicoDAO daoprestador;
 	
 	
 	@Override

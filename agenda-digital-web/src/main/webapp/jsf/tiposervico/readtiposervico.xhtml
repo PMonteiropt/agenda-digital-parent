@@ -1,29 +1,48 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:c="http://java.sun.com/jsf/html"
+	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 
 
-<c:body>
+<h:head>
+	<title>Pagina de Read Tipo de Serviço</title>
+</h:head>
 
-	<p:dataTable var="tiposervico" value="#{readTipoServico.servico}">
-		<f:facet name="header">
-		Tipos de Servico
-		</f:facet>
-		
-		<p:column headerText="Codigo">
-			<c:outputText value="#{tiposervico.codigo]"/>
-		</p:column>
-		
-		<p:column headerText="Descricao">
-			<c:outputText value="#{tiposervico.codigo}"/>
-		</p:column>
-	
+<h:body>
 
 
+	<h:form>
 
 
+		<p:dataTable value="#{readTipoServico.tiposervicos}" var="servico"
+			border="1" width="40%">
 
-	</p:dataTable>
-</c:body>
+			<p:column headerText="Codigo">
+				<h:outputText value="#{tiposervico.codigo}" />
+			</p:column>
+
+			<p:column headerText="Descrição">
+				<h:outputLabel value="#{tiposervico.descricao}" />
+			</p:column>
+
+			<p:column>
+				<p:commandLink action="#{updateTipoServico.edit(tiposervico)}"
+					value="Editar" />
+			</p:column>
+
+			<p:column>
+				<p:commandLink action="#{deleteTipoServico.removeTipoServico}" value="Excluir"
+					update="@form">
+					<f:setPropertyActionListener
+						target="#{deleteTipoServico.tiposervicos}" value="#{tiposervico}" />
+				</p:commandLink>
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
 </html>
+
+
+
+
+
