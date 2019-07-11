@@ -2,28 +2,30 @@
 	xmlns:c="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
-	
-	
+
+
 <c:head>
 	<title>Update Tipo Servico</title>
 </c:head>
-	
-<c:body>	
-	
+
+<c:body>
+
 	<c:form prependId="false">
 		<h2>Update Tipo de Servico</h2>
-		
+
 		<h3>Codigo</h3>
-		<p:inputText id="codigo" value="#{updateTipoServico.tiposervico.codigo}"/>
-		<br/>
+		<p:inputText id="codigo"
+			value="#{updateTipoServico.tiposervico.codigo}" />
+		<br />
 		<h3>Descrição</h3>
-		<p:inputText id="descricao" value="#{updateTipoServico.tiposervico.descricao}"/>
-		<br/>
-		<br/>
-		<p:commandButton value="Gravar" action="#{updateTipoServico.updateTipoServicos}" 
-		update="@form"/>
-	
-	
-</c:form>
-</c:body>	
+		<p:inputText id="descricao"
+			value="#{updateTipoServico.tiposervico.descricao}" />
+		<br />
+		<br />
+		<p:commandButton value="Gravar"
+			action="#{updateTipoServico.updateTipoServicos}" update="@form" />
+
+
+	</c:form>
+</c:body>
 </html>

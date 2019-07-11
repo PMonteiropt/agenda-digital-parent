@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.everis.academia.agenda.digital.entity.TipoServico;
 import com.everis.academia.java.agenda.digital.business.BusinessException;
@@ -14,10 +16,11 @@ import com.everis.academia.java.agenda.digital.dao.ITipoServicoDAO;
 public class TipoServicoBusiness implements ITipoServicoBusiness {
 
 	@Autowired
-	private ITipoServicoDAO daotipo;
+	private ITipoServicoDAO dao;
 	
 	
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void createTipoServico(TipoServico tiposervico) throws BusinessException {
 		
 		
@@ -27,31 +30,34 @@ public class TipoServicoBusiness implements ITipoServicoBusiness {
 		}
 		
 		
-		daotipo.createTipoServico(tiposervico);
+		dao.createTipoServico(tiposervico);
 		
 		
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void deleteTipoServico(TipoServico tiposervico) throws BusinessException {
 	
 		if(tiposervico.getCodigo()==null) {
 			throw new BusinessException("Codigo Obrigatório para eliminar Tipo de Serviço");
 			
 		}
-		daotipo.deleteTipoServico(tiposervico);
+		dao.deleteTipoServico(tiposervico);
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void updateTipoServico(TipoServico tiposervico) {
 		
-		daotipo.updateTipoServico(tiposervico);
+		dao.updateTipoServico(tiposervico);
 	}
 
 	@Override
+	@Transactional(readOnly=true)
 	public List<TipoServico> readTipoServico() {
 		
-		return daotipo.readTipoServico();
+		return dao.readTipoServico();
 	}
 
 }

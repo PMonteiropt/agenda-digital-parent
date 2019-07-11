@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.everis.academia.agenda.digital.entity.TipoServico;
 import com.everis.academia.java.agenda.digital.dao.ITipoServicoDAO;
 
-@Repository
+
 public class TipoServicoDAO implements ITipoServicoDAO {
 
 	private static List<TipoServico> servicos = new ArrayList<>();

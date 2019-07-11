@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.dao.ICidadeDAO;
 
-@Repository
+//@Repository
 public class CidadeDAO implements ICidadeDAO {
 
 	private static List<Cidade> cidades = new ArrayList<>();
@@ -56,20 +56,18 @@ public class CidadeDAO implements ICidadeDAO {
 
 	@Override
 	public void update(Cidade cidade) throws Exception {
-
+			//exige implementaçao do equals
 		int indexOf = cidades.indexOf(cidade);
 		cidades.set(indexOf, cidade);
 	}
 
 	@Override
-	public Boolean jaExisteCidadeComNome(String nome) {
-
-		for (Cidade cidade : cidades) {
-			if (cidade.getNome().equals(nome))
-				return true;
-		}
-		return false;
-
+	public Boolean jaExisteCidadeComNome(Cidade cidade) {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+
+	
 
 }

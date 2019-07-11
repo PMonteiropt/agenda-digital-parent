@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.business.BusinessException;
@@ -17,6 +19,7 @@ public class CidadeBusiness implements ICidadeBusiness {
 	private ICidadeDAO dao;
 
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void create(Cidade cidade) throws BusinessException {
 
 		if (cidade.getNome() == null || cidade.getNome().trim().isEmpty()) {
@@ -25,24 +28,21 @@ public class CidadeBusiness implements ICidadeBusiness {
 
 		}
 
-		if (dao.jaExisteCidadeComNome(cidade.getNome())) {
-
-			throw new BusinessException("Cidade já existe");
-
-		}
+		
 
 		dao.create(cidade);
-
+		
 	}
 
 	@Override
-
+	@Transactional(readOnly=true)
 	public List<Cidade> read() {
 
 		return dao.read();
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void delete(Cidade cidade) throws BusinessException {
 
 		if (cidade.getCodigo() == null) {
@@ -55,6 +55,7 @@ public class CidadeBusiness implements ICidadeBusiness {
 	}
 
 	@Override
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void update(Cidade cidade) throws Exception {
 
 		if (cidade.getNome() == null || cidade.getNome().trim().isEmpty()) {

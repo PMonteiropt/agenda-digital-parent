@@ -1,8 +1,29 @@
 package com.everis.academia.agenda.digital.entity;
 
-public class TipoServico {
+import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table
+@SequenceGenerator(name="SQ_TIPOSERVICO", sequenceName = "SQ_TIPOSERVICO", schema="public",initialValue=1, allocationSize=1)
+public class TipoServico implements Serializable {
+
+	
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(generator="SQ_TIPOSERVICO", strategy=GenerationType.SEQUENCE)	
+	@Column(name="COD_TIPOSERVICO")
 	private Short codigo;
+	
+	@Column(name="DESC_TIPOSERVICO", nullable=false, unique=true)
 	private String descricao;
 	
 	

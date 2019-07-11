@@ -12,7 +12,7 @@ public interface ICidadeDAO {
 
 	public void update(Cidade cidade) throws Exception;
 
-	Boolean jaExisteCidadeComNome(String string);
+	Boolean jaExisteCidadeComNome(Cidade cidade);
 
 	public void delete(Cidade cidade);
 
