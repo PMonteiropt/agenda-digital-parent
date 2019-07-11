@@ -4,6 +4,7 @@ import javax.faces.bean.ManagedBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
 import com.everis.academia.agenda.digital.entity.TipoServico;
 import com.everis.academia.java.agenda.digital.business.BusinessException;
@@ -11,6 +12,7 @@ import com.everis.academia.java.agenda.digital.business.interfaces.ITipoServicoB
 
 @ManagedBean(name="deleteTipoServico")
 @Component("deleteTipoServico")
+@RequestScope
 public class DeleteTipoServico {
 
 		@Autowired

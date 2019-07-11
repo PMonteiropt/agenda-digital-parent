@@ -33,6 +33,8 @@ public class DeleteJSF {
 
 		try {
 
+			business.delete(cidade);
+			
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_INFO, "Cidade Apagada com sucesso", null));
 

@@ -7,12 +7,14 @@ import javax.faces.bean.ManagedBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
 import com.everis.academia.agenda.digital.entity.TipoServico;
 import com.everis.academia.java.agenda.digital.business.interfaces.ITipoServicoBusiness;
 
 @ManagedBean(name="readTipoServico")
 @Component("readTipoServico")
+@RequestScope
 public class ReadTipoServico {
 
 	@Autowired
@@ -28,12 +30,12 @@ public class ReadTipoServico {
 		
 	}
 
-	public List<TipoServico> getServico() {
+	public List<TipoServico> getServicos() {
 		return servicos;
 	}
 
-	public void setServico(List<TipoServico> servico) {
-		this.servicos = servico;
+	public void setServicos(List<TipoServico> servicos) {
+		this.servicos = servicos;
 	}
 
 	

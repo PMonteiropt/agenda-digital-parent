@@ -11,7 +11,7 @@ import com.everis.academia.java.agenda.digital.dao.ITipoServicoDAO;
 @Repository
 public class TipoServicoDAO implements ITipoServicoDAO {
 
-	private static List<TipoServico> tiposervicos = new ArrayList<>();
+	private static List<TipoServico> servicos = new ArrayList<>();
 	
 	private static short id = 0;
 	
@@ -22,7 +22,7 @@ public class TipoServicoDAO implements ITipoServicoDAO {
 		
 		tiposervico.setCodigo(id);
 		
-		tiposervicos.add(tiposervico);
+		servicos.add(tiposervico);
 		
 
 	}
@@ -30,21 +30,21 @@ public class TipoServicoDAO implements ITipoServicoDAO {
 	@Override
 	public void deleteTipoServico(TipoServico tiposervico) {
 		
-		tiposervicos.remove(tiposervico);
+		servicos.remove(tiposervico);
 	}
 
 	@Override
 	public void updateTipoServico(TipoServico tiposervico) {
 		
-		int indexOf = tiposervicos.indexOf(tiposervico);
-		tiposervicos.set(indexOf, tiposervico);
+		int indexOf = servicos.indexOf(tiposervico);
+		servicos.set(indexOf, tiposervico);
 	}
 
 	@Override
 	
 	public List<TipoServico> readTipoServico() {
 	
-		return tiposervicos;
+		return servicos;
 	}
 
 }
