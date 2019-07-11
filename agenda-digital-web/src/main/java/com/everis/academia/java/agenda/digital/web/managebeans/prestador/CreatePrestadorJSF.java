@@ -11,8 +11,8 @@ import com.everis.academia.agenda.digital.enums.TipoLogradouro;
 import com.everis.academia.java.agenda.digital.business.BusinessException;
 import com.everis.academia.java.agenda.digital.business.interfaces.IPrestadorServicoBusiness;
 
-@ManagedBean(name="createPrestador")
-@Component("createPrestador")
+@ManagedBean(name="createPrestadores")
+@Component("createPrestadores")
 @RequestScope
 public class CreatePrestadorJSF {
 
@@ -22,14 +22,14 @@ public class CreatePrestadorJSF {
 		@Autowired
 		private IPrestadorServicoBusiness businessprestador;
 		
-		private PrestadorServico prestadorservico = new PrestadorServico();
+		private PrestadorServico prestador = new PrestadorServico();
 
 		public PrestadorServico getPrestadorservico() {
-			return prestadorservico;
+			return prestador;
 		}
 
-		public void setPrestadorservico(PrestadorServico prestadorservico) {
-			this.prestadorservico = prestadorservico;
+		public void setPrestadorservico(PrestadorServico prestador) {
+			this.prestador = prestador;
 		}
 		
 		
@@ -45,7 +45,7 @@ public class CreatePrestadorJSF {
 		
 		public String criarPrestadorServico() throws BusinessException {
 			
-			businessprestador.createPrestador(prestadorservico);
+			businessprestador.createPrestador(prestador);
 			
 			
 			return "readtiposervico";

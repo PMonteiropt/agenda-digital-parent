@@ -1,7 +1,0 @@
-com\everis\academia\agenda\digital\entity\ServicoPrestado.class
-com\everis\academia\agenda\digital\entity\PrestacaoServico.class
-com\everis\academia\agenda\digital\entity\Telefone.class
-com\everis\academia\agenda\digital\entity\PrestadorServico.class
-com\everis\academia\agenda\digital\entity\Cidade.class
-com\everis\academia\agenda\digital\enums\TipoLogradouro.class
-com\everis\academia\agenda\digital\entity\TipoServico.class

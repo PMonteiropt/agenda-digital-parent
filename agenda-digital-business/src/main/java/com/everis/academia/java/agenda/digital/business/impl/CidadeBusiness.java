@@ -15,7 +15,6 @@ public class CidadeBusiness implements ICidadeBusiness {
 
 	@Autowired
 	private ICidadeDAO dao;
-	
 
 	@Override
 	public void create(Cidade cidade) throws BusinessException {
@@ -46,12 +45,11 @@ public class CidadeBusiness implements ICidadeBusiness {
 	@Override
 	public void delete(Cidade cidade) throws BusinessException {
 
-		if(cidade.getCodigo()==null) {
-			
+		if (cidade.getCodigo() == null) {
+
 			throw new BusinessException("O codigo é obrigatório para Remover Cidade");
 		}
-		
-		
+
 		dao.delete(cidade);
 
 	}
@@ -64,11 +62,9 @@ public class CidadeBusiness implements ICidadeBusiness {
 		}
 
 		/// query para ver se existe cidade na lista
-		//if (dao.search(cidade.getNome()) != null) {
-			dao.update(cidade);
-		}
-
-	
+		// if (dao.search(cidade.getNome()) != null) {
+		dao.update(cidade);
+	}
 
 	public CidadeBusiness() {
 		super();

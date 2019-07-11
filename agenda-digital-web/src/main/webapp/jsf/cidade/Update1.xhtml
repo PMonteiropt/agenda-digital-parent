@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<c:head>
+	<title>Update Cidade</title>
+</c:head>
+
+<c:body>
+
+	<c:form prependId="false">
+		<h2>Update Cidade</h2>
+		
+		<h3>Codigo:</h3>
+		<p:inputText id="codigo" value="#{cidadeUpdate.cidade.codigo}" />
+		<br />		
+		<h3>Nome:</h3>
+		<p:inputText id="nome" value="#{cidadeUpdate.cidade.nome}" />
+		<br />
+		<br />
+		<p:commandButton value="Criar" action="#{cidadeUpdate.update}"
+			update="@form" />
+	</c:form>
+</c:body>
+</html>

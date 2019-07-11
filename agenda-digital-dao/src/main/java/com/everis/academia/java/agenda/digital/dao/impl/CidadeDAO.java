@@ -11,8 +11,6 @@ import com.everis.academia.java.agenda.digital.dao.ICidadeDAO;
 @Repository
 public class CidadeDAO implements ICidadeDAO {
 
-	
-	
 	private static List<Cidade> cidades = new ArrayList<>();
 
 	private static short id = 0;
@@ -48,7 +46,6 @@ public class CidadeDAO implements ICidadeDAO {
 
 	}
 
-	
 	@Override
 	public void delete(Cidade cidade) {
 

@@ -9,28 +9,30 @@
 </h:head>
 <h:body>
 	<h:form>
-		
 
+		
 		<p:dataTable value="#{read.cidades}" var="cidade" border="1"
 			width="40%">
 
 			<p:column headerText="Codigo">
 				<h:outputText value="#{cidade.codigo}" />
 			</p:column>
-			
+
 			<p:column headerText="Nome">
 				<h:outputLabel value="#{cidade.nome}" />
 			</p:column>
-			
+
 			<p:column>
-				<p:commandLink action="#{updateCidade.edit(cidade)}" value="Editar"/>
-			</p:column>	
-				
+				<p:commandLink action="#{cidadeUpdate.edit(cidade)}" value="Editar"/>
+					
+			</p:column>
+
 			<p:column>
-				<p:commandLink action="#{deleteCidade.delete}" value="Excluir">
-					<f:setPropertyActionListener target="#{deleteCidade.cidade}" value="#{cidade}"/>
-			</p:commandLink>
-		</p:column>
+				<p:commandLink action="#{deleteCidade.delete}" value="Excluir" update="@form">
+					<f:setPropertyActionListener target="#{deleteCidade.cidade}"
+						value="#{cidade}" />
+				</p:commandLink>
+			</p:column>
 		</p:dataTable>
 	</h:form>
 </h:body>
