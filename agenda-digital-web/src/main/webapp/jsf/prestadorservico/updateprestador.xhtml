@@ -14,22 +14,39 @@
 <h:body>
 
 	<h:form prependId="false">
-	<h2>Update Prestador de Serviço</h2>
-	
-	<h3>Codigo</h3>
-	<p:inputText id="codigo"
-		value="#{updatePrestadorServico.prestador.codigo}"/>
-	<br/>
-	<h3>Nome</h3>
-	<p:inputText id="nome"
-		value="#{updatePrestadorServico.prestador.nome}"/>
-	<br/>
-	<br/>
-	<p:commandButton value="Gravar"
-		action="#{updatePrestadorServico.UpdatePrestador}" update="@form"/>
-	
+		<h2>Update Prestador de Serviço</h2>
+
+		<h3>Codigo</h3>
+		<p:inputText id="codigo"
+			value="#{updatePrestadorServico.prestador.codigo}" />
+		<br />
+		<h3>Nome</h3>
+		<p:inputText id="nome"
+			value="#{updatePrestadorServico.prestador.nome}" />
+		<h3>Bairro</h3>
+		<p:inputText id="bairro"
+			value="#{updatePrestadorServico.prestador.bairro}" />
+		<h3>CEP</h3>
+		<p:inputText id="cep" value="#{updatePrestadorServico.prestador.cep}" />
+		<h3>Logradouro</h3>
+		<p:inputText id="logradouro"
+			value="#{updatePrestadorServico.prestador.logradouro}" />
+		<h3>Complemento</h3>
+		<p:inputText id="complemento"
+			value="#{updatePrestadorServico.prestador.complemento}" />
+		<h3>Número</h3>
+		<p:inputText id="numero"
+			value="#{updatePrestadorServico.prestador.numero}" />
+		<h3>Email</h3>
+		<p:inputText id="email"
+			value="#{updatePrestadorServico.prestador.email}" />
+		<br />
+		<br />
+		<p:commandButton value="Gravar"
+			action="#{updatePrestadorServico.UpdatePrestador}" update="@form" />
 
 
-</h:form>
+
+	</h:form>
 </h:body>
 </html>

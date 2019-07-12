@@ -34,25 +34,25 @@ public class PrestadorServico implements Serializable {
 	@Transient
 	private Cidade cidade;
 	
-	@Transient
+	
 	private String bairro;
 	
-	@Transient
+	
 	private String cep;
 	
 	@Transient
 	private TipoLogradouro tipoLogradouro;
 	
-	@Transient
+	
 	private String logradouro;
 	
-	@Transient
+	
 	private String complemento;
 	
-	@Transient
+	
 	private String numero;
 	
-	@Transient
+	
 	private String email;
 	
 	@Transient

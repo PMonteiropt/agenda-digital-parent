@@ -41,7 +41,7 @@ public class UpdateTipoServico {
 		
 		businesstipo.updateTipoServico(tiposervico);
 		
-		return null;
+		return "readtiposervico";
 	}
 
 }

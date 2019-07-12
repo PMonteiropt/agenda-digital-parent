@@ -37,7 +37,7 @@ public class UpdatePrestadorServico {
 		
 		businessprestador.updatePrestador(prestador);
 		
-		return null;
+		return "readprestador";
 	}
 
 }
