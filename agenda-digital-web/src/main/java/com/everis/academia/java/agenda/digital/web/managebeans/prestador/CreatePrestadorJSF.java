@@ -9,6 +9,7 @@ import org.springframework.web.context.annotation.RequestScope;
 import com.everis.academia.agenda.digital.entity.PrestadorServico;
 import com.everis.academia.agenda.digital.enums.TipoLogradouro;
 import com.everis.academia.java.agenda.digital.business.BusinessException;
+import com.everis.academia.java.agenda.digital.business.interfaces.ICidadeBusiness;
 import com.everis.academia.java.agenda.digital.business.interfaces.IPrestadorServicoBusiness;
 
 @ManagedBean(name = "createPrestadores")
@@ -18,6 +19,8 @@ public class CreatePrestadorJSF {
 
 	@Autowired
 	private IPrestadorServicoBusiness businessprestador;
+	
+
 
 	private PrestadorServico prestador = new PrestadorServico();
 
@@ -43,4 +46,6 @@ public class CreatePrestadorJSF {
 		return "readprestador";
 	}
 
+	
+	
 }

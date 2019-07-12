@@ -31,7 +31,7 @@ public class PrestadorServico implements Serializable {
 	@Column(name="NOME_PRESTADOR", nullable = false, unique=false)
 	private String nome;
 	
-	@Transient
+
 	private Cidade cidade;
 	
 	

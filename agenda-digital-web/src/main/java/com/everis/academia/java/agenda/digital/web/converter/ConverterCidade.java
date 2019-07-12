@@ -2,12 +2,13 @@ package com.everis.academia.java.agenda.digital.web.converter;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
+import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
 
 @FacesConverter(value = "CidadeConverter", forClass = Cidade.class)
-public class ConverterCidade {
+public class ConverterCidade implements Converter {
 
 	public Object getAsObject(FacesContext context, UIComponent component, String value) {
 
