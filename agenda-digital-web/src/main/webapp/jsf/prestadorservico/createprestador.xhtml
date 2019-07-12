@@ -5,17 +5,27 @@
 
 
 
-<title></title>
+<h:head>
+	<title>Criar Prestador de Serviço</title>
+</h:head>
 
+<h:body>
 
+	<h:form prependId="false">
+		<h2>Prestador de Serviço</h2>
+		
+		<h3>Nome</h3>
+		<p:inputText id="nome"
+		value="#{createPrestadores.prestadorservico.nome}"/>
+		
+		<br/>
+		<br/>
+		<p:commandButton value="Criar"
+			action="#{createPrestadores.criarPrestadorServico}" update="@form"/>
 
-<h:form>
-	<span class ="ui-float-label">
-	<p:outputLabel name="nomeprestador" value="Nome"/>
-	<p:inputText id="float-input"/>
-</span>
 
 
 
 </h:form>
+</h:body>
 </html>

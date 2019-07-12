@@ -24,6 +24,8 @@ public class CreatePrestadorJSF {
 		
 		private PrestadorServico prestador = new PrestadorServico();
 
+		
+		//FrontEnd chama a entidade do metodo
 		public PrestadorServico getPrestadorservico() {
 			return prestador;
 		}
@@ -48,7 +50,7 @@ public class CreatePrestadorJSF {
 			businessprestador.createPrestador(prestador);
 			
 			
-			return "readtiposervico";
+			return "readprestador";
 		}
 
 

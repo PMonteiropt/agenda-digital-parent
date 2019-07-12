@@ -4,45 +4,42 @@
 	xmlns:p="http://primefaces.org/ui">
 
 
+
 <h:head>
-	<title>Pagina de Read Tipo de Serviço</title>
+	<title>Prestadores de Serviço</title>
 </h:head>
 
 <h:body>
 
-
 	<h:form>
 
-
-		<p:dataTable value="#{readTipoServico.servicos}" var="servico"
+		<p:dataTable value="#{readPrestador.prestadores}" var="prestador"
 			border="1" width="40%">
 
 			<p:column headerText="Codigo">
-				<h:outputText value="#{servico.codigo}" />
+				<h:outputText value="#{prestador.codigo}" />
 			</p:column>
 
-			<p:column headerText="Descrição">
-				<h:outputLabel value="#{servico.descricao}" />
+			<p:column headerText="Nome">
+				<h:outputText value="#{prestador.nome}" />
 			</p:column>
 
 			<p:column>
-				<p:commandLink action="#{updateTipoServico.edit(servico)}"
+				<p:commandLink action="#{updatePrestadorServico.edit(prestador)}"
 					value="Editar" />
 			</p:column>
 
+
 			<p:column>
-				<p:commandLink action="#{deleteTipoServico.removeTipoServico}"
+				<p:commandLink
+					action="#{deletePrestadorServico.removePrestadorServico}"
 					value="Excluir" update="@form">
 					<f:setPropertyActionListener
-						target="#{deleteTipoServico.tiposervico}" value="#{servico}" />
+						target="#{deletePrestadorServico.prestadorservico}"
+						value="#{prestador}" />
 				</p:commandLink>
 			</p:column>
 		</p:dataTable>
 	</h:form>
 </h:body>
 </html>
-
-
-
-
-

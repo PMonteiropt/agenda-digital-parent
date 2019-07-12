@@ -1,52 +1,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:u="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	<title>Update Prestador de Serviço</title>
+</h:head>
+
+
+
+
+<h:body>
+
+	<h:form prependId="false">
+	<h2>Update Prestador de Serviço</h2>
 	
+	<h3>Codigo</h3>
+	<p:inputText id="codigo"
+		value="#{updatePrestadorServico.prestador.codigo}"/>
+	<br/>
+	<h3>Nome</h3>
+	<p:inputText id="nome"
+		value="#{updatePrestadorServico.prestador.nome}"/>
+	<br/>
+	<br/>
+	<p:commandButton value="Gravar"
+		action="#{updatePrestadorServico.UpdatePrestador}" update="@form"/>
 	
-	
-	<body>
-
-	<u:form>
-
-		<u:outputLabel for="codigo" value="Codigo:" />
-		<u:inputText id="codigo" value= />
-
-		<u:outputLabel for="nome" value="Nome:" />
-		<u:inputText id="codigo" value= />
-
-		<u:outputLabel for="cidade" value="Cidade:" />
-		<u:inputText id="cidade" value= />
-
-		<u:outputLabel for="bairro" value="Bairro:" />
-		<u:inputText id="cidade" value= />
-
-		<u:outputLabel id="cep" value="CEP:" />
-		<u:inputText id="cep" value=/>
-
-		<u:outputLabel id="tipologradouro" value="Tipo de Logradouro:" />
-		<u:inputText id="tipoLogradouro" value= />
-
-		<u:outputLabel id="logradouro" value="Logradouro:" />
-		<u:inputText id="logradouro" value= />
-
-		<u:outputLabel id="complemento" value="Complemento:" />
-		<u:inputText id="complmento" value= />
-
-		<u:outputLabel id="numero" value="Numero:" />
-		<u:inputText id="numero" value= />
-
-		<u:outputLabel id="telefone" value="Telefone:" />
-		<u:inputText id="telefone" value= />
-		
-		<u:outputLabel id="email" value="Email:" />
-		<u:inputText id="numero" value= />
-	</u:form>
-
-	<u:commandButton value="Criar" action= />
 
 
-
-</body>
-
-
-
+</h:form>
+</h:body>
 </html>

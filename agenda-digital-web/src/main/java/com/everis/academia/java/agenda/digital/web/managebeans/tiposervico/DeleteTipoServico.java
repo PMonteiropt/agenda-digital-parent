@@ -10,36 +10,28 @@ import com.everis.academia.agenda.digital.entity.TipoServico;
 import com.everis.academia.java.agenda.digital.business.BusinessException;
 import com.everis.academia.java.agenda.digital.business.interfaces.ITipoServicoBusiness;
 
-@ManagedBean(name="deleteTipoServico")
+@ManagedBean(name = "deleteTipoServico")
 @Component("deleteTipoServico")
 @RequestScope
 public class DeleteTipoServico {
 
-		@Autowired
-		private ITipoServicoBusiness businesstipo;
-		
-		private TipoServico tiposervico = new TipoServico();
+	@Autowired
+	private ITipoServicoBusiness businesstipo;
 
-		public TipoServico getTiposervico() {
-			return tiposervico;
-		}
+	private TipoServico tiposervico = new TipoServico();
 
-		public void setTiposervico(TipoServico tiposervico) {
-			this.tiposervico = tiposervico;
-		}
-		
-		public void removeTipoServico() throws BusinessException {
-			
-			
-			businesstipo.deleteTipoServico(tiposervico);
-			
-			
-			
-		}
-			
-			
-			
+	public TipoServico getTiposervico() {
+		return tiposervico;
+	}
+
+	public void setTiposervico(TipoServico tiposervico) {
+		this.tiposervico = tiposervico;
+	}
+
+	public void removeTipoServico() throws BusinessException {
+
+		businesstipo.deleteTipoServico(tiposervico);
+
+	}
+
 }
-		
-
-

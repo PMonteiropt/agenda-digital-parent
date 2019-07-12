@@ -24,8 +24,8 @@ public class PrestadorServico implements Serializable {
 
 	
 	@Id
-	@GeneratedValue(generator="SQ_TIPO_SERVICO", strategy=GenerationType.SEQUENCE)
-	@Column(name="COD_TIPO_SERVICO")
+	@GeneratedValue(generator="SQ_PRESTADOR_SERVICO", strategy=GenerationType.SEQUENCE)
+	@Column(name="COD_PRESTADOR_SERVICO")
 	private Integer codigo;
 	
 	@Column(name="NOME_PRESTADOR", nullable = false, unique=false)
