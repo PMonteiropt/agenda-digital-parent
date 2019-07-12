@@ -21,7 +21,7 @@
 			<h3>Cidade</h3>
 			<p:selectOneMenu id="cidade" value="#{createPrestadores.prestadorservico.cidade}" converter="CidadeConverter">
 				<f:selectItem itemLabel="Escolha uma Opção" itemValue="" />
-				<f:selectItems value="#{read.cidades}" />
+				<f:selectItems value="#{read.cidades}" var="cidades" itemLabel="#{cidades.nome}" itemValue="#{cidades.codigo}" />
 			</p:selectOneMenu>
 		</h:panelGrid>
 		<h3>Bairro</h3>
