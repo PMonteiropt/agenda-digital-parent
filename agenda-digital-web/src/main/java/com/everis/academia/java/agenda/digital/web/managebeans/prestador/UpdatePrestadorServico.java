@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
 
 import com.everis.academia.agenda.digital.entity.PrestadorServico;
+import com.everis.academia.agenda.digital.enums.TipoLogradouro;
 import com.everis.academia.java.agenda.digital.business.interfaces.IPrestadorServicoBusiness;
 
 @ManagedBean(name="updatePrestadorServico")
@@ -39,5 +40,9 @@ public class UpdatePrestadorServico {
 		
 		return "readprestador";
 	}
+	public TipoLogradouro[] getEnum() {
 
+		return TipoLogradouro.values();
+
+	}
 }

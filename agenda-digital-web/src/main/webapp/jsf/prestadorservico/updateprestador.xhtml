@@ -28,6 +28,14 @@
 			value="#{updatePrestadorServico.prestador.bairro}" />
 		<h3>CEP</h3>
 		<p:inputText id="cep" value="#{updatePrestadorServico.prestador.cep}" />
+		<h:panelGrid>
+			<h3>Tipo de Logradouro</h3>
+			<p:selectOneMenu id="tipologradouro"
+				value="#{updatePrestadorServico.prestador.tipoLogradouro}">
+				<f:selectItem itemLabel="Escolha uma Opção" itemValue="" />
+				<f:selectItems value="#{updatePrestadorServico.getEnum()}" />
+			</p:selectOneMenu>
+		</h:panelGrid>
 		<h3>Logradouro</h3>
 		<p:inputText id="logradouro"
 			value="#{updatePrestadorServico.prestador.logradouro}" />

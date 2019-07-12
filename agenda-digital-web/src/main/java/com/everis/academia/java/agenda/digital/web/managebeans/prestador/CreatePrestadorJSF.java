@@ -11,47 +11,36 @@ import com.everis.academia.agenda.digital.enums.TipoLogradouro;
 import com.everis.academia.java.agenda.digital.business.BusinessException;
 import com.everis.academia.java.agenda.digital.business.interfaces.IPrestadorServicoBusiness;
 
-@ManagedBean(name="createPrestadores")
+@ManagedBean(name = "createPrestadores")
 @Component("createPrestadores")
 @RequestScope
 public class CreatePrestadorJSF {
 
-		
+	@Autowired
+	private IPrestadorServicoBusiness businessprestador;
 
-	
-		@Autowired
-		private IPrestadorServicoBusiness businessprestador;
-		
-		private PrestadorServico prestador = new PrestadorServico();
+	private PrestadorServico prestador = new PrestadorServico();
 
-		
-		//FrontEnd chama a entidade do metodo
-		public PrestadorServico getPrestadorservico() {
-			return prestador;
-		}
+	// FrontEnd chama a entidade do metodo
+	public PrestadorServico getPrestadorservico() {
+		return prestador;
+	}
 
-		public void setPrestadorservico(PrestadorServico prestador) {
-			this.prestador = prestador;
-		}
-		
-		
-		
-		
-		public TipoLogradouro[] returnEnum() {
-			
-			
-			return TipoLogradouro.values();
-			
-		}
-		
-		
-		public String criarPrestadorServico() throws BusinessException {
-			
-			businessprestador.createPrestador(prestador);
-			
-			
-			return "readprestador";
-		}
+	public void setPrestadorservico(PrestadorServico prestador) {
+		this.prestador = prestador;
+	}
 
+	public TipoLogradouro[] getEnum() {
+
+		return TipoLogradouro.values();
+
+	}
+
+	public String criarPrestadorServico() throws BusinessException {
+
+		businessprestador.createPrestador(prestador);
+
+		return "readprestador";
+	}
 
 }

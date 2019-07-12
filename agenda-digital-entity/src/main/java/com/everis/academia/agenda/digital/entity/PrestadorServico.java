@@ -40,7 +40,7 @@ public class PrestadorServico implements Serializable {
 	
 	private String cep;
 	
-	@Transient
+	
 	private TipoLogradouro tipoLogradouro;
 	
 	
