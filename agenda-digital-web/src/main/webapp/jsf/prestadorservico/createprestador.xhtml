@@ -19,7 +19,7 @@
 			value="#{createPrestadores.prestadorservico.nome}" />
 		<h:panelGrid>
 			<h3>Cidade</h3>
-			<p:selectOneMenu id="cidade" value="#{createPrestadores.prestadorservico.cidade}" converter="CidadeConverter">
+			<p:selectOneMenu id="cidade" value="#{createPrestadores.prestadorservico.cidade}" converter="#{CidadeConverter}">
 				<f:selectItem itemLabel="Escolha uma Opção" itemValue="" />
 				<f:selectItems value="#{read.cidades}" var="cidades" itemLabel="#{cidades.nome}" itemValue="#{cidades.codigo}" />
 			</p:selectOneMenu>
@@ -52,7 +52,13 @@
 		<h3>Email</h3>
 		<p:inputText id="email"
 			value="#{createPrestadores.prestadorservico.email}" />
-		<br />
+		<br/>
+		<h:panelGrid>
+			<h3>Serviços Credenciados</h3>
+			<p:selectManyCheckbox id="credenciados" value="#{createPrestadores.prestadorservico.servicosCredenciados}" converter="#{ConverterTipoServico}">
+			<f:selectItems value="#{readTipoServico.servicos}" var="servicos" itemLabel="#{servicos.descricao}" itemValue="#{servicos.codigo}"/>
+			</p:selectManyCheckbox>
+		</h:panelGrid>
 		<br />
 		<p:commandButton value="Criar"
 			action="#{createPrestadores.criarPrestadorServico}" update="@form" />

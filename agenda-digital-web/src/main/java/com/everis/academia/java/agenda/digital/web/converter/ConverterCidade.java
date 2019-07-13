@@ -7,7 +7,7 @@ import javax.faces.convert.FacesConverter;
 
 import com.everis.academia.agenda.digital.entity.Cidade;
 
-@FacesConverter(value = "CidadeConverter", forClass = Cidade.class)
+@FacesConverter(value = "ConverterCidade", forClass = Cidade.class)
 public class ConverterCidade implements Converter {
 
 	public Object getAsObject(FacesContext context, UIComponent component, String value) {

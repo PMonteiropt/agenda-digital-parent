@@ -11,7 +11,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="TB_TIPOSERVICO", schema="public")
 @SequenceGenerator(name="SQ_TIPOSERVICO", sequenceName = "SQ_TIPOSERVICO", schema="public",initialValue=1, allocationSize=1)
 public class TipoServico implements Serializable {
 

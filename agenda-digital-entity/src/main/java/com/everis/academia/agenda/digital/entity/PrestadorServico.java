@@ -5,9 +5,12 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -32,27 +35,31 @@ public class PrestadorServico implements Serializable {
 	private String nome;
 	
 
+	@ManyToOne(fetch = FetchType.EAGER, targetEntity = Cidade.class)
+	@JoinColumn(name = "ID_CIDADE", nullable = false)
 	private Cidade cidade;
 	
 	
+	@Column(name = "BAIRRO", length = 50, nullable = false, unique = false)
 	private String bairro;
 	
-	
+	@Column(name = "CEP", length = 20, nullable = false, unique = false)
 	private String cep;
 	
-	
+	@Column(name = "TIPO_LOGRADOURO", length = 100, nullable = false, unique = false)
 	private TipoLogradouro tipoLogradouro;
 	
-	
+	@Column(name = "LOGRADOURO", length = 100, nullable = false, unique = false)
 	private String logradouro;
 	
-	
+	@Column(name = "COMPLEMENTO", length = 150255, nullable = false, unique = false)
 	private String complemento;
 	
-	
+	@Column(name = "NUMERO", length = 20, nullable = false, unique = false)
 	private String numero;
 	
 	
+	@Column(name = "EMAIL", length = 25, nullable = false, unique = true)
 	private String email;
 	
 	@Transient

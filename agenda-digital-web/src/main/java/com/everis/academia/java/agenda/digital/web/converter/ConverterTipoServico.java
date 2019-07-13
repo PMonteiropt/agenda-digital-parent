@@ -7,7 +7,7 @@ import javax.faces.convert.FacesConverter;
 
 import com.everis.academia.agenda.digital.entity.TipoServico;
 
-@FacesConverter(value = "TipoServico", forClass = TipoServico.class)
+@FacesConverter(value = "ConverterTipoServico", forClass = TipoServico.class)
 public class ConverterTipoServico implements Converter {
 
 	@Override
