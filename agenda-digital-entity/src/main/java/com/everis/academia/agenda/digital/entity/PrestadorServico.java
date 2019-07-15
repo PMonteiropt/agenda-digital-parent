@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -18,67 +20,61 @@ import javax.persistence.Transient;
 import com.everis.academia.agenda.digital.enums.TipoLogradouro;
 
 @Entity
-@Table(name="TB_PRESTADOR_SERVICO", schema="public")
-@SequenceGenerator(name="SQ_PRESTADOR_SERVICO", sequenceName="SQ_PRESTADOR_SERVICO",initialValue=1,allocationSize=1)
+@Table(name = "TB_PRESTADOR_SERVICO", schema = "public")
+@SequenceGenerator(name = "SQ_PRESTADOR_SERVICO", sequenceName = "SQ_PRESTADOR_SERVICO", initialValue = 1, allocationSize = 1)
 public class PrestadorServico implements Serializable {
 
-	
 	private static final long serialVersionUID = 1L;
 
-	
 	@Id
-	@GeneratedValue(generator="SQ_PRESTADOR_SERVICO", strategy=GenerationType.SEQUENCE)
-	@Column(name="COD_PRESTADOR_SERVICO")
+	@GeneratedValue(generator = "SQ_PRESTADOR_SERVICO", strategy = GenerationType.SEQUENCE)
+	@Column(name = "COD_PRESTADOR_SERVICO")
 	private Integer codigo;
-	
-	@Column(name="NOME_PRESTADOR", nullable = false, unique=false)
+
+	@Column(name = "NOME_PRESTADOR", nullable = false, unique = false)
 	private String nome;
-	
 
 	@ManyToOne(fetch = FetchType.EAGER, targetEntity = Cidade.class)
 	@JoinColumn(name = "ID_CIDADE", nullable = false)
 	private Cidade cidade;
-	
-	
+
 	@Column(name = "BAIRRO", length = 50, nullable = false, unique = false)
 	private String bairro;
-	
+
 	@Column(name = "CEP", length = 20, nullable = false, unique = false)
 	private String cep;
-	
+
 	@Column(name = "TIPO_LOGRADOURO", length = 100, nullable = false, unique = false)
 	private TipoLogradouro tipoLogradouro;
-	
+
 	@Column(name = "LOGRADOURO", length = 100, nullable = false, unique = false)
 	private String logradouro;
-	
+
 	@Column(name = "COMPLEMENTO", length = 150255, nullable = false, unique = false)
 	private String complemento;
-	
+
 	@Column(name = "NUMERO", length = 20, nullable = false, unique = false)
 	private String numero;
-	
-	
+
 	@Column(name = "EMAIL", length = 25, nullable = false, unique = true)
 	private String email;
-	
+
 	@Transient
 	private Set<Telefone> telefone;
-	
-	@Transient
+
+	@ManyToMany(fetch = FetchType.EAGER, targetEntity = TipoServico.class)
+	@JoinTable(name = "TB_SERVICOS_CREDENCIADOS", joinColumns = {
+			@JoinColumn(name = "COD_PRESTADOR_SERVICO") }, inverseJoinColumns = {
+					@JoinColumn(name = "COD_TIPO_SERVICO") })
+
 	private Set<TipoServico> servicosCredenciados;
-	
+
 	@Transient
 	private Set<PrestacaoServico> prestacoesServicos;
-	
-	
- 	
 
-	
-	
 	public PrestadorServico() {
 		super();
-		
+
 	}
 
 	public PrestadorServico(Integer codigo) {
@@ -86,7 +82,6 @@ public class PrestadorServico implements Serializable {
 		this.codigo = codigo;
 	}
 
-	
 	public Integer getCodigo() {
 		return codigo;
 	}
@@ -190,13 +185,5 @@ public class PrestadorServico implements Serializable {
 	public void setPrestacoesServicos(Set<PrestacaoServico> prestacoesServicos) {
 		this.prestacoesServicos = prestacoesServicos;
 	}
-	
-	
-	
 
-
-
-
-
-}	
-
+}

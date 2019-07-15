@@ -1,6 +1,8 @@
 package com.everis.academia.java.agenda.digital.web.managebeans.prestador;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -19,10 +21,11 @@ public class CreatePrestadorJSF {
 
 	@Autowired
 	private IPrestadorServicoBusiness businessprestador;
-	
-
 
 	private PrestadorServico prestador = new PrestadorServico();
+
+	@Autowired
+	ICidadeBusiness cidadebusiness;
 
 	// FrontEnd chama a entidade do metodo
 	public PrestadorServico getPrestadorservico() {
@@ -41,11 +44,28 @@ public class CreatePrestadorJSF {
 
 	public String criarPrestadorServico() throws BusinessException {
 
+		try {
+		
 		businessprestador.createPrestador(prestador);
 
+		FacesContext.getCurrentInstance().addMessage("nome",
+				new FacesMessage(FacesMessage.SEVERITY_INFO, "Prestador Criado com sucesso", null));
+		
 		return "readprestador";
+	}catch(Exception e) {
+
+
+		FacesContext.getCurrentInstance().addMessage("nome",
+				new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao criar prestador",
+
+						e.getLocalizedMessage()));
+	return null;
 	}
 
-	
-	
-}
+	}		
+}		
+		
+		
+		
+		
+		

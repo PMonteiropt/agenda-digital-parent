@@ -13,7 +13,7 @@ public interface ITipoServicoBusiness {
 	public void deleteTipoServico(TipoServico tiposervico) throws BusinessException;
 		
 	
-	public void updateTipoServico(TipoServico tiposervico);
+	public void updateTipoServico(TipoServico tiposervico) throws BusinessException;
 	
 	public List<TipoServico> readTipoServico();
 

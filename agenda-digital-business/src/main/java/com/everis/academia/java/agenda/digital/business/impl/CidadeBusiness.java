@@ -62,8 +62,7 @@ public class CidadeBusiness implements ICidadeBusiness {
 			throw new BusinessException("Nome Obrigatório");
 		}
 
-		/// query para ver se existe cidade na lista
-		// if (dao.search(cidade.getNome()) != null) {
+		
 		dao.update(cidade);
 	}
 

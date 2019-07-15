@@ -46,10 +46,8 @@
 			</p:column>
 			<p:column>
 				<p:commandLink action="#{updatePrestadorServico.edit(prestador)}"
-					value="Editar" />
+					value="Editar" update="@form" />
 			</p:column>
-
-
 			<p:column>
 				<p:commandLink
 					action="#{deletePrestadorServico.removePrestadorServico}"

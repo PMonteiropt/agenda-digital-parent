@@ -8,6 +8,7 @@ import org.springframework.web.context.annotation.RequestScope;
 
 import com.everis.academia.agenda.digital.entity.PrestadorServico;
 import com.everis.academia.agenda.digital.enums.TipoLogradouro;
+import com.everis.academia.java.agenda.digital.business.BusinessException;
 import com.everis.academia.java.agenda.digital.business.interfaces.IPrestadorServicoBusiness;
 
 @ManagedBean(name="updatePrestadorServico")
@@ -34,7 +35,7 @@ public class UpdatePrestadorServico {
 				return "updateprestador";
 		
 	}
-	public String UpdatePrestador() {
+	public String UpdatePrestador() throws BusinessException {
 		
 		businessprestador.updatePrestador(prestador);
 		

@@ -48,7 +48,12 @@ public class TipoServicoBusiness implements ITipoServicoBusiness {
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED)
-	public void updateTipoServico(TipoServico tiposervico) {
+	public void updateTipoServico(TipoServico tiposervico) throws BusinessException {
+		
+		if(tiposervico.getDescricao()==null||tiposervico.getDescricao().trim().isEmpty()) {
+			throw new BusinessException("Descrição Obrigatória");
+		}
+		
 		
 		dao.updateTipoServico(tiposervico);
 	}

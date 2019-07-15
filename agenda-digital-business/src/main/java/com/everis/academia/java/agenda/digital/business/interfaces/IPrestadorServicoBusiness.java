@@ -9,9 +9,9 @@ public interface IPrestadorServicoBusiness {
 
 	public void createPrestador(PrestadorServico prestador) throws BusinessException;
 		
-	public void updatePrestador(PrestadorServico prestador);
+	public void updatePrestador(PrestadorServico prestador) throws BusinessException;
 	
-	public void deletePrestador(PrestadorServico prestador);
+	public void deletePrestador(PrestadorServico prestador) throws BusinessException;
 
 	List<PrestadorServico> read();
 

@@ -20,10 +20,10 @@ public class TipoServico implements Serializable {
 
 	@Id
 	@GeneratedValue(generator="SQ_TIPOSERVICO", strategy=GenerationType.SEQUENCE)	
-	@Column(name="COD_TIPOSERVICO")
+	@Column(name="COD_TIPO_SERVICO")
 	private Short codigo;
 	
-	@Column(name="DESC_TIPOSERVICO", nullable=false, unique=true)
+	@Column(name="DESC_TIPO_SERVICO", nullable=false, unique=true)
 	private String descricao;
 	
 	
