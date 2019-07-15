@@ -43,7 +43,7 @@ public class UpdateJSF {
 			business.update(cidade);
 
 			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage(FacesMessage.SEVERITY_INFO, "Cidade actualizada com sucesso", null));
+				new FacesMessage(FacesMessage.SEVERITY_INFO, "Cidade actualizada com sucesso", null));
 
 			return "Read";
 		} catch (Exception e) {

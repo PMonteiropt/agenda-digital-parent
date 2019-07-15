@@ -55,12 +55,12 @@ public class CidadeBusiness implements ICidadeBusiness {
 	}
 
 	@Override
- 
+	@Transactional(propagation=Propagation.REQUIRED)
 	public void update(Cidade cidade) throws Exception {
 
-		if (cidade.getNome() == null || cidade.getNome().trim().isEmpty()) {
-			throw new BusinessException("Nome Obrigatório");
-		}
+		//if (cidade.getNome() == null || cidade.getNome().trim().isEmpty()) {
+		//	throw new BusinessException("Nome Obrigatório");
+		//}
 
 		
 		dao.update(cidade);

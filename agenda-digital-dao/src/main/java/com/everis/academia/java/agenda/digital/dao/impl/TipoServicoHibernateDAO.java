@@ -11,16 +11,15 @@ import org.springframework.stereotype.Repository;
 import com.everis.academia.agenda.digital.entity.TipoServico;
 import com.everis.academia.java.agenda.digital.dao.ITipoServicoDAO;
 
-
 @Repository
 public class TipoServicoHibernateDAO implements ITipoServicoDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
 	@Override
 	public void createTipoServico(TipoServico tiposervico) {
-	
+
 		Session session = sessionFactory.getCurrentSession();
 		session.save(tiposervico);
 		session.flush();
@@ -28,18 +27,16 @@ public class TipoServicoHibernateDAO implements ITipoServicoDAO {
 
 	@Override
 	public void deleteTipoServico(TipoServico tiposervico) {
-		
+
 		Session session = sessionFactory.getCurrentSession();
 
 		sessionFactory.getCurrentSession().delete(tiposervico);
-		
-		
+
 	}
 
 	@Override
 	public void updateTipoServico(TipoServico tiposervico) {
-		
-		
+
 		Session session = sessionFactory.getCurrentSession();
 
 		session.update(tiposervico);
@@ -49,7 +46,7 @@ public class TipoServicoHibernateDAO implements ITipoServicoDAO {
 
 	@Override
 	public List<TipoServico> readTipoServico() {
-		
+
 		Session session = sessionFactory.getCurrentSession();
 		Criteria criteria = session.createCriteria(TipoServico.class);
 

@@ -13,7 +13,6 @@ import org.springframework.stereotype.Repository;
 import com.everis.academia.agenda.digital.entity.Cidade;
 import com.everis.academia.java.agenda.digital.dao.ICidadeDAO;
 
-
 @Repository
 public class CidadeHibernateDAO implements ICidadeDAO {
 
