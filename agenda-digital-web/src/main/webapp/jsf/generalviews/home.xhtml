@@ -6,28 +6,15 @@
 <c:body>
 
 
-	<c:form>
+	
 
 
+		
+		<p:link value="Criar Cidade" outcome="/jsf/cidade/Create.xhtml" style="margin-right:10px; margin-left:10px"> </p:link>
+		
+		<p:link value="Criar Prestador" outcome="/jsf/prestadorservico/createprestador.xhtml" style="margin-right:10px; margin-left:10px"> </p:link>
 
-		<p:column>
-			<p:commandLink id="cidade" action="#{HomeJSF.directCidade(cidade)}" value="Criar Cidade" />
-		</p:column>
-		<br />
-		<p:column>
-			<p:commandLink id="prestador" action="#{HomeJSF.directPrestador(prestador)}"
-				value="Criar Prestador" />
-		</p:column>
-		<br />
-		<p:column>
-			<p:commandLink id="tiposervico" action="#{HomeJSF.directTipoServico(tiposervico)}"
-				value="Criar Tipo de Serviço" />
-		</p:column>
-		<br />
-
-
-
-
-	</c:form>
+		<p:link value="Criar Tipo de Serviço" outcome="/jsf/tiposervico/createtiposervico.xhtml" style="margin-right:10px; margin-left:10px"> </p:link>
+	
 </c:body>
 </html>
